@@ -7,8 +7,3 @@
 @define-color subtle #7ec8c8;         /* Turquoise patina */
 @define-color border #7ea67c;         /* Jade green */
 
-#window {
-    background: rgba(26, 31, 46, 0.97);
-    border: 2px solid @border;
-    border-radius: 10px;
-}
