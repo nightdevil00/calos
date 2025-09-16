@@ -1,7 +1,7 @@
 [ui.window.box]
-width = 664
-min_width = 664
-max_width = 664
+width = 400
+min_width = 300
+max_width = 600
 height = 396
 min_height = 396
 max_height = 396

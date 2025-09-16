@@ -275,18 +275,19 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  go_to_menu "$(menu "Go" "󰀻  Wiki\n󰸌  Themes\n  Style\n  Toggle\n  Screenrecord\n  Restart\n  System")"
+  go_to_menu "$(menu "Go" "󰀻  Apps\n󰧑  Wiki\n󰸌  Themes\n  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
 }
 
 go_to_menu() {
   case "${1,,}" in
   *wiki*) show_wiki_menu ;;
+  *apps*) walker -p "Launch..." ;;
   *style*) show_style_menu ;;
   *theme*) show_theme_menu ;;
   *config*) show_setup_config_menu ;;
   *restart*) show_update_process_menu ;;
-  *screenshot*) show_screenshot_menu ;;
-  *screenrecord*) show_screenrecord_menu ;;
+  *screenshot*) show_capture_menu ;;
+  *capture*) show_capture_menu ;;
   *toggle*) show_toggle_menu ;;
   *Font*) show_font_menu ;;
   *setup*) show_setup_menu ;;
