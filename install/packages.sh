@@ -14,7 +14,6 @@ sudo pacman -S --noconfirm --needed \
   fd \
   firefox \
   fzf \
-  gamescope \
   gnome-themes-extra \
   gum \
   hyprland \
