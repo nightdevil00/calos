@@ -26,7 +26,7 @@ bind 'TAB:menu-complete'
 
 alias la='eza --icons=auto -a'
 alias ls='eza --icons=auto'
-alias cava='cava -p /home/arthur/.config/calos/current/theme/cava/config'
+alias cava='cava -p ~/.config/calos/current/theme/cava/config'
 alias grep='grep --color=auto'
 alias dota='steam steam://rungameid/570/'
 alias please='sudo'
