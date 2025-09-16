@@ -6,6 +6,7 @@ sudo pacman -S --noconfirm --needed \
   bluetui \
   brightnessctl \
   btop \
+  cava \
   dust \
   eza \
   fortune-mod \

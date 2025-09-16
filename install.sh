@@ -10,11 +10,11 @@ clear
 echo "Installation Starting..."
 echo
 echo "Please note, this install script will make the current user the default for the login process, bypassing the input user prompt."
-sleep 1
+sleep 2
 echo "If you would like to change that, make sure to edit (or remove) /etc/systemd/system/getty@tty1.service.d/skip-username.conf (requires sudo)"
-sleep 1
+sleep 2
 echo "Only do this if you would like to allow multiple user/DE logins or change the default user login!"
-sleep 5
+sleep 8
 echo
 echo
 echo "Ready?"
@@ -22,7 +22,10 @@ echo
 echo
 
 echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
-
+echo
+sleep 1
+echo
+echo "HERE WE GO"
 sleep 1
 
 # Preparation
