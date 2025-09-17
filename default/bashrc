@@ -32,6 +32,9 @@ alias please='sudo'
 alias cat='bat '
 alias update='sudo pacman -Syu'
 alias upgrade='sudo pacman -Syu'
+alias cava='cava -p ~/.config/calos/current/theme/cava/config'
+alias svim='sudo nvim '
+alias bios-reboot='systemctl reboot --firmware-setup'
 
 if !  systemctl is-active --quiet bootmsg; then
   fastfetch
