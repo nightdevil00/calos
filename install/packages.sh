@@ -14,7 +14,6 @@ sudo pacman -S --noconfirm --needed \
   fd \
   firefox \
   fzf \
-  gnome-themes-extra \
   gum \
   hyprland \
   hypridle \
@@ -29,12 +28,10 @@ sudo pacman -S --noconfirm --needed \
   llvm \
   mako \
   man \
-  mise \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
   noto-fonts-extra \
-  nss-mdns \
   nvim \
   omarchy-chromium \
   pamixer \
@@ -42,9 +39,7 @@ sudo pacman -S --noconfirm --needed \
   plocate \
   polkit-gnome \
   power-profiles-daemon \
-  python-gobject \
   python-terminaltexteffects \
-  ripgrep \
   satty \
   slurp \
   starship \
@@ -53,13 +48,13 @@ sudo pacman -S --noconfirm --needed \
   tldr \
   tree-sitter-cli \
   ttf-cascadia-mono-nerd \
+  ttf-fira-code \
   ttf-font-awesome \
   ttf-jetbrains-mono \
   unzip \
   uwsm \
   walker-bin \
   waybar \
-  whois \
   wiremix \
   wireplumber \
   wl-clip-persist \
