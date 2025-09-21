@@ -73,12 +73,19 @@ sudo cp ~/.local/share/calos/install/skip-username.conf /etc/systemd/system/gett
 sudo cp ~/.local/share/calos/install/issue /etc/issue
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 yay -S --noconfirm --needed rose-pine-hyprcursor
-echo "arthur ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
+echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
 echo "Boot message service added and enabled."
 
 xdg-settings set default-web-browser firefox.desktop
+
+echo
+echo
+echo "Enabling polkit service and applying miscellaneous fixes."
+
+systemctl --user enable --now hyprpolkitagent.service
+sudo chmod 666 /dev/uinput
 
 # Reboot
 echo

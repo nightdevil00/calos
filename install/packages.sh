@@ -22,7 +22,7 @@ sudo pacman -S --noconfirm --needed \
   hyprshot \
   hyprsunset \
   inetutils \
-  kvantum-qt5 \
+  impala \
   lazygit \
   less \
   llvm \
@@ -32,13 +32,15 @@ sudo pacman -S --noconfirm --needed \
   noto-fonts-cjk \
   noto-fonts-emoji \
   noto-fonts-extra \
+  nss-mdns \
   nvim \
   omarchy-chromium \
   pamixer \
   playerctl \
   plocate \
-  polkit-gnome \
+  hyprpolkitagent \
   power-profiles-daemon \
+  python-gobject \
   python-terminaltexteffects \
   satty \
   slurp \
@@ -48,7 +50,6 @@ sudo pacman -S --noconfirm --needed \
   tldr \
   tree-sitter-cli \
   ttf-cascadia-mono-nerd \
-  ttf-fira-code \
   ttf-font-awesome \
   ttf-jetbrains-mono \
   unzip \
@@ -62,7 +63,6 @@ sudo pacman -S --noconfirm --needed \
   wl-screenrec \
   xdg-desktop-portal-gtk \
   xdg-desktop-portal-hyprland \
-  xmlstarlet \
   yaru-icon-theme \
   yazi \
   yay \
