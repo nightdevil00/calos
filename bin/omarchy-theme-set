@@ -59,7 +59,8 @@ fi
 touch "$HOME/.config/alacritty/alacritty.toml"
 
 # Trigger ghostty config reload
-killall -SIGUSR2 ghostty
+# systemctl reload --user app-com.mitchellh.ghostty.service
+# killall -SIGUSR2 ghostty
 
 # Restart components to apply new theme
 pkill -SIGUSR2 btop

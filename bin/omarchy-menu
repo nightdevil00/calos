@@ -22,7 +22,7 @@ menu() {
 }
 
 terminal() {
-  alacritty --class Omarchy -e "$@"
+  $TERMINAL --class Omarchy -e "$@"
 }
 
 present_terminal() {
@@ -31,7 +31,7 @@ present_terminal() {
 
 edit_in_nvim() {
   notify-send "Editing config file" "$1"
-  alacritty -e nvim "$1"
+  $TERMINAL -e nvim "$1"
 }
 
 install() {

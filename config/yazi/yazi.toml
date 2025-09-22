@@ -1,16 +1,3 @@
 # yazi.toml
 [mgr]
 show_hidden = true
-
-[opener]
-
-image = [
-{ run = 'feh "$@"' },
-]
-
-[open]
-rules = [
-{ name = "*.jpg", use = "image" },
-
-{ name = "*.png", use = "image" },
-]
