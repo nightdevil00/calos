@@ -1,64 +1,90 @@
+@import "styles/modules-center.css";
+@import "styles/modules-left.css";
+@import "styles/modules-right.css";
+@import "theme.css";
 @import "../calos/current/theme/waybar.css";
 
 * {
-  background-color: @background;
-  color: @foreground;
-
-  border: none;
-  border-radius: 0;
-  min-height: 0;
-  font-family: CaskaydiaMono Nerd Font;
-  font-size: 15px;
+  font-family: 'Fira Code';
+	font-size: 15px;
+	color: @main-fg;
 }
 
-.modules-left {
-  margin-left: 8px;
+/* main outline */
+
+window#waybar {
+	background-color: #1C2128;
+  border-radius: 6;
 }
 
-.modules-right {
-  margin-right: 8px;
+/* main background */
+
+window#waybar > box {
+	margin: 4px;
+	background-color: @background;
 }
 
-#workspaces button {
-  all: initial;
-  padding: 0 6px;
-  margin: 0 1.5px;
-  min-width: 9px;
+/* hoverables */
+
+#custom-theme_switcher:hover,
+#idle_inhibitor:hover,
+#clock.date:hover,
+#network:hover,
+#bluetooth:hover,
+#custom-system_update:hover,
+#mpris:hover,
+#pulseaudio:hover {
+	color: @hover-fg;
 }
 
-#workspaces button.empty {
-  opacity: 0.5;
+/* states */
+
+.warning { color: @warning; }
+.critical { color: @critical; }
+.charging { color: @charging; }
+.muted { color: @hover-fg; }
+
+/* dividers */
+
+#custom-left_div,
+#custom-left_inv,
+#custom-right_div,
+#custom-right_inv {
+	font-size: 23.1px;
 }
 
-#tray,
-#cpu,
-#memory,
+/* buttons */
+
+button {
+	border-radius: 16px;
+	padding: 0 10px;
+}
+button:hover {
+	background-color: @hover-bg;
+	color: @hover-fg;
+}
+
+/* tooltips */
+
+tooltip {
+	border: 2px solid @main-br;
+	border-radius: 10px;
+	background-color: @main-bg;
+}
+tooltip label {
+	margin: 2px 4px;
+	font-weight: normal;
+}
+tooltip decoration {
+	border: none;
+	background-color: transparent;
+}
+
+/* right-module-options */
+
 #network,
 #bluetooth,
 #pulseaudio,
-#cpu,
-#temperature,
-#custom-omarchy,
 #custom-update {
       padding: 0 12px;
-}
-
-#custom-expand-icon {
-  margin-right: 7px;
-}
-
-tooltip {
-  padding: 2px;
-}
-
-#custom-update {
-  font-size: 10px;
-}
-
-#clock {
-  margin-left: 8.75px;
-}
-
-.hidden {
-  opacity: 0;
 }
