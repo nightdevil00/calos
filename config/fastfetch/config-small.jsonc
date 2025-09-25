@@ -1,11 +1,12 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  
   "logo": {
     "type": "file",
-    "source": "~/.config/calos/branding/about.txt",
+    "source": "~/.config/calos/branding/blank.txt",
     "padding": {
-      "top": 1,
-      "right": 1,
+      "top": 12,
+      "right": 14,
       "left": 1
     }
   },
@@ -13,13 +14,12 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌─────────────Hardware──────────────────────┐"
+      "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
     },
     {
-      "type": "command",
+      "type": "host",
       "key": " PC",
       "keyColor": "green",
-      "text": "echo AUROS X870 STEALTH ICE"
     },
     {
       "type": "cpu",
@@ -28,9 +28,9 @@
       "keyColor": "green"
     },
     {
-      "type": "command",
+      "type": "gpu",
       "key": "│ ├",
-      "text": "echo AMD Sapphire Nitro+ 9070XT",
+      "detectionMethod": "pci",
       "keyColor": "green"
     },
     {
@@ -55,12 +55,12 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└───────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌─────────────Software──────────────────────┐"
+      "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
     },
     {
       "type": "command",
@@ -111,12 +111,12 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└───────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌───────────Uptime / Age────────────────────┐"
+      "format": "\u001b[90m┌────────────────────Uptime / Age────────────────────┐"
     },
     {
       "type": "command",
@@ -131,7 +131,7 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└───────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
     },
     "break"
   ]
