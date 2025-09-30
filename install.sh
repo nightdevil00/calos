@@ -81,7 +81,6 @@ echo
 echo "Enabling polkit service and applying miscellaneous fixes."
 
 systemctl --user enable --now hyprpolkitagent.service
-systemctl --user enable --now waybar.service
 sudo chmod 666 /dev/uinput
 
 # Reboot
