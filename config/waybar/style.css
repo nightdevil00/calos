@@ -5,7 +5,7 @@
 @import "../calos/current/theme/waybar.css";
 
 * {
-  font-family: 'Fira Code';
+  font-family: 'CaskaydiaMono Nerd Font';
 	font-size: 15px;
 	color: @main-fg;
 }

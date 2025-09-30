@@ -32,7 +32,7 @@
     "pulseaudio",
     "network",
 		"bluetooth",
-		"custom/system_update",
+//		"custom/system_update",
 		"custom/power_menu"
 	],
 
@@ -384,7 +384,7 @@
 
 	"custom/distro": {
 		"format": "󰣇",
-    "on-click": "omarchy-menu",
+    "on-click": "calos-menu",
 		"tooltip": false
 	},
 
