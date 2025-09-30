@@ -26,7 +26,7 @@ echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM'
 sleep 1
 
 # Preparation
-source $CALOS_INSTALL/preflight/show-env.sh
+# source $CALOS_INSTALL/preflight/show-env.sh
 source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
@@ -88,8 +88,5 @@ sudo chmod 666 /dev/uinput
 echo
 echo
 echo "Installation completed. Reboot to access system."
-
-if sudo test -f /etc/sudoers.d/99-omarchy-installer; then
-  sudo rm -f /etc/sudoers.d/99-omarchy-installer &>/dev/null
-  echo -e "\nRemember to remove USB installer!\n\n"
-fi
+echo "Prior to reboot, navigate to ~/.config/hypr/ and use nano to edit the 'monitors.conf' file with your proper resolution/refresh rate."
+echo
