@@ -1,4 +1,4 @@
-sudo pacman -S --noconfirm --needed \
+tsudo pacman -S --noconfirm --needed \
   alacritty \
   avahi \
   bash-completion \
@@ -29,6 +29,7 @@ sudo pacman -S --noconfirm --needed \
   llvm \
   mako \
   man \
+  nano \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
