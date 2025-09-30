@@ -1,4 +1,4 @@
-tsudo pacman -S --noconfirm --needed \
+sudo pacman -S --noconfirm --needed \
   alacritty \
   avahi \
   bash-completion \
