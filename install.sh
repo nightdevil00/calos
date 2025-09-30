@@ -43,7 +43,7 @@ source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
 # source $CALOS_INSTALL/config/git.sh
 # source $CALOS_INSTALL/config/gpg.sh
-source $CALOS_INSTALL/config/timezones.sh
+# source $CALOS_INSTALL/config/timezones.sh
 source $CALOS_INSTALL/config/increase-sudo-tries.sh
 source $CALOS_INSTALL/config/increase-lockout-limit.sh
 source $CALOS_INSTALL/config/ssh-flakiness.sh
