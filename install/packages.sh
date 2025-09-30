@@ -7,6 +7,7 @@ sudo pacman -S --noconfirm --needed \
   brightnessctl \
   btop \
   cava \
+  cmus \
   dust \
   eza \
   fortune-mod \
@@ -34,12 +35,10 @@ sudo pacman -S --noconfirm --needed \
   noto-fonts-extra \
   nss-mdns \
   nvim \
-  omarchy-chromium \
   pamixer \
   playerctl \
   plocate \
   hyprpolkitagent \
-  power-profiles-daemon \
   python-gobject \
   python-terminaltexteffects \
   satty \

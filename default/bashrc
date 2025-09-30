@@ -47,4 +47,4 @@ if ! systemctl is-active --quiet bootmsg; then
   echo " "
 fi
 
-export STARSHIP_CONFIG=~/.config/calos/current/theme/starship.toml
+export STARSHIP_CONFIG=~/.config/starship.toml

@@ -65,10 +65,10 @@ touch "$HOME/.config/alacritty/alacritty.toml"
 # Restart components to apply new theme
 pkill -SIGUSR2 btop
 pkill -SIGUSR1 cava
-omarchy-restart-waybar
-omarchy-restart-swayosd
+calos-restart-waybar
+calos-restart-swayosd
 makoctl reload
 hyprctl reload
 
 # Set new background
-omarchy-theme-bg-next
+calos-theme-bg-next
