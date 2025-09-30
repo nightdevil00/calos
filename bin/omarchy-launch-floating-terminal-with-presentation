@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cmd="$*"
-exec setsid uwsm app -- "$TERMINAL" --class=Omarchy -e bash -c $cmd

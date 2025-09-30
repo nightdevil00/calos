@@ -22,36 +22,12 @@ menu() {
 }
 
 terminal() {
-  $TERMINAL --class Omarchy -e "$@"
-}
-
-present_terminal() {
-  omarchy-launch-floating-terminal-with-presentation $1
+  $TERMINAL --class Calos -e "$@"
 }
 
 edit_in_nvim() {
   notify-send "Editing config file" "$1"
   $TERMINAL -e nvim "$1"
-}
-
-install() {
-  present_terminal "echo 'Installing $1...'; sudo pacman -S --noconfirm $2"
-}
-
-install_and_launch() {
-  present_terminal "echo 'Installing $1...'; sudo pacman -S --noconfirm $2 && setsid gtk-launch $3"
-}
-
-install_font() {
-  present_terminal "echo 'Installing $1...'; sudo pacman -S --noconfirm --needed $2 && sleep 2 && omarchy-font-set '$3'"
-}
-
-aur_install() {
-  present_terminal "echo 'Installing $1 from AUR...'; yay -S --noconfirm $2"
-}
-
-aur_install_and_launch() {
-  present_terminal "echo 'Installing $1 from AUR...'; yay -S --noconfirm $2 && setsid gtk-launch $3"
 }
 
 show_style_menu() {
@@ -110,20 +86,10 @@ show_screenrecord_menu() {
 }
 
 show_toggle_menu() {
-  case $(menu "Toggle" "󱄄  Screensaver\n󰔎  Nightlight\n󱫖  Idle Lock\n󰍜  Top Bar") in
-  *Screensaver*) calos-toggle-screensaver ;;
+  case $(menu "Toggle" "󰔎  Nightlight\n󰍜  Top Bar") in
   *Nightlight*) calos-toggle-nightlight ;;
-  *Idle*) calos-toggle-idle ;;
   *Bar*) calos-toggle-waybar ;;
   *) show_main_menu ;;
-  esac
-}
-
-show_install_gaming_menu() {
-  case $(menu "Install" "  Steam\n  RetroArch [AUR]") in
-  *Steam*) present_terminal omarchy-install-steam ;;
-  *RetroArch*) aur_install_and_launch "RetroArch" "retroarch retroarch-assets libretro libretro-fbneo" "com.libretro.RetroArch.desktop" ;;
-  *) show_install_menu ;;
   esac
 }
 
