@@ -5,7 +5,7 @@
 ### Read more at config document: https://github.com/limine-bootloader/limine/blob/trunk/CONFIG.md
 timeout: 3
 verbose: yes
-default_entry: 1
+default_entry: 2
 wallpaper: boot():/boot.jpg
  
 EOF
