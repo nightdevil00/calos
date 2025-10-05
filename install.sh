@@ -26,7 +26,7 @@ echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM'
 sleep 1
 
 # Preparation
-# source $CALOS_INSTALL/preflight/show-env.sh
+source $CALOS_INSTALL/preflight/show-env.sh
 source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
