@@ -9,9 +9,9 @@ if [[ -n "$font_name" && "$font_name" != "CNCLD" ]]; then
     sed -i "s/font-family: .*/font-family: '$font_name';/g" ~/.config/waybar/style.css
     sed -i "s/font-family: .*/font-family: '$font_name';/g" ~/.config/swayosd/style.css
 
-    omarchy-restart-waybar
-    omarchy-restart-swayosd
-    omarchy-restart-walker
+    calos-restart-waybar
+    calos-restart-swayosd
+    calos-restart-walker
 
   else
     echo "Font '$font_name' not found."
