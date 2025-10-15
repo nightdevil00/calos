@@ -2,6 +2,21 @@
 
 export PATH="$HOME/.local/share/calos/bin:$PATH"
 
+# Set to true when going directly to a submenu, so we can exit directly
+BACK_TO_EXIT=true
+
+back_to() {
+  local parent_menu="$1"
+
+  if [[ "$BACK_TO_EXIT" == "true" ]]; then
+    exit 0
+  elif [[ -n "$parent_menu" ]]; then
+    "$parent_menu"
+  else
+    show_main_menu
+  fi
+}
+
 menu() {
   local prompt="$1"
   local options="$2"
@@ -18,7 +33,7 @@ menu() {
     fi
   fi
 
-  echo -e "$options" | walker --dmenu --theme dmenu_250 -p "$prompt…" "${args[@]}"
+  echo -e "$options" | calos-launch-walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "$prompt…" "${args[@]}" 2>/dev/null
 }
 
 terminal() {
@@ -35,25 +50,25 @@ show_style_menu() {
   *Theme*) show_theme_menu ;;
   *Font*) show_font_menu ;;
   *Background*) calos-theme-bg-next ;;
-  *Screensaver*) edit_in_nvim ~/.config/calos/branding/screensaver.txt ;;
-  *About*) edit_in_nvim ~/.config/calos/branding/about.txt ;;
+  *Screensaver*) open_in_editor ~/.config/omarchy/branding/screensaver.txt ;;
+  *About*) open_in_editor ~/.config/omarchy/branding/about.txt ;;
   *) show_main_menu ;;
   esac
 }
 
 show_theme_menu() {
-  theme=$(menu "Theme" "$(calos-theme-list)" "" "$(calos-theme-current)")
+  theme=$(menu "Theme" "$(calos-theme-list)" "")
   if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
-    show_main_menu
+    back_to show_style_menu
   else
     calos-theme-set "$theme"
   fi
 }
 
 show_font_menu() {
-  theme=$(menu "Font" "$(calos-font-list)" "-w 350" "$(calos-font-current)")
+  theme=$(menu "Font" "$(calos-font-list)" "--width 350" "")
   if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
-    show_main_menu
+    back_to show_style_menu
   else
     calos-font-set "$theme"
   fi
@@ -114,7 +129,7 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  go_to_menu "$(menu "Go" "󰀻  Apps\n󰸌  Themes\n  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
+  go_to_menu "$(menu "Select" "󰀻  Apps\n󰸌  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
 }
 
 go_to_menu() {
