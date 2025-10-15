@@ -60,7 +60,7 @@ sudo pacman -S --noconfirm --needed \
   wireplumber \
   wl-clip-persist \
   wl-clipboard \
-  wl-screenrec \
+  gpu-screen-recorder \
   xdg-desktop-portal-gtk \
   xdg-desktop-portal-hyprland \
   yaru-icon-theme \
