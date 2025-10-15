@@ -1,74 +1,76 @@
 #!/usr/bin/env bash
 #
-# Check for package updates using pacman and AUR helper
+# Update system packages using pacman and AUR helper
 #
 # Author: Jesse Mirabel <github.com/sejjy>
 # Created: August 16, 2025
 # License: MIT
 
-green='\033[1;32m'
-blue='\033[1;34m'
-reset='\033[0m'
+GRN='\033[1;32m'
+BLU='\033[1;34m'
+RST='\033[0m'
 
-check_updates() {
-	local s=5
+TIMEOUT=5
+HELPER=$(command -v yay trizen pikaur paru pakku pacaur aurman aura |
+  head -n 1 | xargs -- basename)
 
-	if ! repo_updates=$(timeout $s pacman -Quq | wc -l); then
-		repo_updates=0
-	fi
+check-updates() {
+  repo=$(timeout $TIMEOUT pacman -Quq | wc -l) || repo=0
 
-	helper=$(
-		basename "$(command -v yay trizen pikaur paru pakku pacaur aurman aura |
-			head -n 1)"
-	)
-
-	if [[ -n $helper ]]; then
-		if ! aur_updates=$(timeout $s "$helper" -Quaq 2>/dev/null | wc -l); then
-			aur_updates=0
-		fi
-	else
-		aur_updates=0
-	fi
+  aur=0
+  if [[ -n $HELPER ]]; then
+    aur=$(timeout $TIMEOUT "$HELPER" -Quaq 2>/dev/null | wc -l) ||
+      aur=0
+  fi
 }
 
-update_packages() {
-	if ((repo_updates > 0)); then
-		printf '\n\n'
-		echo -e "${blue}Updating pacman packages...${reset}"
-		sudo pacman -Syu
-	fi
+update-packages() {
+  if ((repo + aur == 0)); then
+    notify-send 'No updates available' -i 'package-installed-updated'
+  else
+    if ((repo > 0)); then
+      printf '\n%bUpdating pacman packages...%b\n' "$BLU" "$RST"
+      sudo pacman -Syu
+    fi
 
-	if ((aur_updates > 0)); then
-		echo -e "\n${blue}Updating AUR packages...${reset}"
-		"$helper" -Syu
-	fi
+    if ((aur > 0)); then
+      printf '\n%bUpdating AUR packages...%b\n' "$BLU" "$RST"
+      "$HELPER" -Syu
+    fi
+
+    notify-send 'Update Complete' -i 'package-install'
+
+    printf '\n%bUpdate Complete!%b\n' "$GRN" "$RST"
+    read -rs -n 1 -p 'Press any key to exit...'
+  fi
 }
 
-if [[ $1 == 'start' ]]; then
-	echo -en "${blue}Checking for updates...${reset}"
+display-tooltip() {
+  local tooltip="Official: $repo"
+  if [[ -n $HELPER ]]; then
+    tooltip+="\nAUR($HELPER): $aur"
+  fi
 
-	check_updates
-	update_packages
+  if ((repo + aur == 0)); then
+    echo "{ \"text\": \"󰸟\", \"tooltip\": \"No updates available\" }"
+  else
+    echo "{ \"text\": \"\", \"tooltip\": \"$tooltip\" }"
+  fi
+}
 
-	notify-send 'Update Complete'
-	echo -e "\n${green}Update complete!${reset}\n"
+main() {
+  local action=$1
+  case $action in
+  start)
+    printf '%bChecking for updates...%b' "$BLU" "$RST"
+    check-updates
+    update-packages
+    ;;
+  *)
+    check-updates
+    display-tooltip
+    ;;
+  esac
+}
 
-	read -rs -n 1 -p 'Press any key to exit...'
-	exit 0
-fi
-
-check_updates
-
-tooltip="Official: $repo_updates"
-
-if [[ -n $helper ]]; then
-	tooltip+="\nAUR($helper): $aur_updates"
-fi
-
-total_updates=$((repo_updates + aur_updates))
-
-if ((total_updates > 0)); then
-	echo "{ \"text\": \"\", \"tooltip\": \"$tooltip\" }"
-else
-	echo "{ \"text\": \"󰸟\", \"tooltip\": \"No updates available\" }"
-fi
+main "$@"
