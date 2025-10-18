@@ -10,5 +10,5 @@ wallpaper: boot():/boot.jpg
  
 EOF
 
-yay limine-mkinitcpio-hook
+yay -S --noconfirm --needed limine-mkinitcpio-hook
 sudo limine-update
