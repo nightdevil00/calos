@@ -42,6 +42,8 @@ cd ~/.local/share/calos
 
 yay walker
 yay python-terminaltexteffects
+yay gpu-screen-recorder
+yay yaru-icon-theme
 
 # Packaging
 source $CALOS_INSTALL/packages.sh
