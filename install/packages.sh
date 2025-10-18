@@ -1,10 +1,8 @@
 sudo pacman -S --noconfirm --needed \
   alacritty \
-  avahi \
   bash-completion \
   bat \
   bluetui \
-  brightnessctl \
   btop \
   cava \
   cmus \
@@ -15,6 +13,8 @@ sudo pacman -S --noconfirm --needed \
   fd \
   firefox \
   fzf \
+  greetd \
+  greetd-tuigreet \
   gum \
   hyprland \
   hypridle \
@@ -26,7 +26,6 @@ sudo pacman -S --noconfirm --needed \
   impala \
   lazygit \
   less \
-  llvm \
   mako \
   man \
   nano \
@@ -34,7 +33,6 @@ sudo pacman -S --noconfirm --needed \
   noto-fonts-cjk \
   noto-fonts-emoji \
   noto-fonts-extra \
-  nss-mdns \
   nvim \
   pamixer \
   playerctl \
@@ -51,10 +49,9 @@ sudo pacman -S --noconfirm --needed \
   tree-sitter-cli \
   ttf-cascadia-mono-nerd \
   ttf-font-awesome \
-  ttf-jetbrains-mono \
   unzip \
   uwsm \
-  walker-bin \
+  walker \
   waybar \
   wiremix \
   wireplumber \

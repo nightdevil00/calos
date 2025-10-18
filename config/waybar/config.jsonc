@@ -388,7 +388,7 @@
 
 	"custom/distro": {
 		"format": "󰣇",
-    "on-click": "calos-menu",
+    "on-click": "calos-walker-app",
 		"tooltip": false
 	},
 
