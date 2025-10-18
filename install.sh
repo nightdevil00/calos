@@ -31,6 +31,19 @@ source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
 
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+echo "yay installed! Resuming install"
+sleep 5
+clear
+cd ~/.local/share/calos
+
+yay walker
+yay python-terminaltexteffects
+
+
 # Packaging
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
