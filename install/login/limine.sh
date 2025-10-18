@@ -10,5 +10,5 @@ wallpaper: boot():/boot.jpg
  
 EOF
 
-sudo pacman -S --noconfirm --needed limine-mkinitcpio-hook
+yay limine-mkinitcpio-hook
 sudo limine-update
