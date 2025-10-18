@@ -94,6 +94,10 @@ echo "Enabling polkit service and applying miscellaneous fixes."
 systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
 
+sudo pacman -Rns maven
+sudo pacman -Rdd greetd-agreety
+sudo systemctl enable greetd.service
+
 # Reboot
 echo
 echo
