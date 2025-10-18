@@ -11,6 +11,7 @@ sudo pacman -S --noconfirm --needed \
   fortune-mod \
   fastfetch \
   fd \
+  feh\
   firefox \
   fzf \
   greetd \
