@@ -43,7 +43,6 @@ cd ~/.local/share/calos
 yay walker
 yay python-terminaltexteffects
 
-
 # Packaging
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
@@ -103,4 +102,5 @@ echo
 echo
 echo "Installation completed. Reboot to access system."
 echo "Prior to reboot, navigate to ~/.config/hypr/ and use nano to edit the 'monitors.conf' file with your proper resolution/refresh rate."
+echo "For further system tuning, please look into removing elephant and waybar as an exec-once variable in your hyprland configuration and adding them as system services."
 echo
