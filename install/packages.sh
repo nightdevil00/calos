@@ -25,7 +25,6 @@ sudo pacman -S --noconfirm --needed \
   hyprsunset \
   inetutils \
   impala \
-  lazygit \
   less \
   mako \
   man \
@@ -55,10 +54,7 @@ sudo pacman -S --noconfirm --needed \
   wireplumber \
   wl-clip-persist \
   wl-clipboard \
-  gpu-screen-recorder \
   xdg-desktop-portal-gtk \
   xdg-desktop-portal-hyprland \
-  yaru-icon-theme \
   yazi \
-  yay \
   zoxide
