@@ -38,8 +38,6 @@ sudo pacman -S --noconfirm --needed \
   playerctl \
   plocate \
   hyprpolkitagent \
-  python-gobject \
-  python-terminaltexteffects \
   satty \
   slurp \
   starship \
@@ -51,7 +49,6 @@ sudo pacman -S --noconfirm --needed \
   ttf-font-awesome \
   unzip \
   uwsm \
-  walker \
   waybar \
   wiremix \
   wireplumber \
