@@ -1,7 +1,7 @@
 # UNDER CONSTRUCTION UNTIL 2.0
 
 # calOS
-CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of. CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (only 600+ packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.**
+CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of, tailored to desktops. CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (only 600+ packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.**
 
 tl;dr its dotfiles baby
 
@@ -10,8 +10,24 @@ tl;dr its dotfiles baby
 ### System
 
 * A custom hyprland.conf file with numerous keybinds and configurations.
-* `SUPER + CTRL` brings up all of your system-based keybinds. This includes a clipboard manager (clipse), power menu, screensaver, internet/bluetooth/waybar management and much more.
-* `SUPER + SHIFT` are the browser-based keybinds. Examples include 
+  - Most keybinds should just "make sense" such as Super + B launching your Browser. For a full list refer to the keybindings.conf file in ~/.config/hypr. Important ones include:
+  - Super + Escape to bring up your Walker dmenu for system features (toggle system settings, power menu, app launcher).
+  - Super + Space shows your application launcher.
+  - Super + Enter for your terminal (Alacritty).
+  - Super + S for System Monitoring (btop++).
+  - Super + N for Neovim.
+  - Super + Y for Yazi (file manager).
+* `SUPER + CTRL` brings up all of your system-based keybinds. The binds below assume you are already holding down SUPER + CTRL.
+```
+ + L enables up your screensaver.
+ + N will toggle hyprsunet (night shift).
+ + W will toggle waybar on/off.
+ + C shows your clipboard history (clipse).
+ + B brings up the Bluetooth menu (bluetui).
+ + S launches walker's dmenu, specifically for power options.
+ + I shows internet settings (impala).
+```
+* `SUPER + SHIFT` are the browser-based keybinds. Refer to the keybindings.conf file in your ~/.config/hypr folder to easily change them. By default they open up popular webpages.
 
 
 ### Style
