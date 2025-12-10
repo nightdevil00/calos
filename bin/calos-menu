@@ -33,7 +33,7 @@ menu() {
     fi
   fi
 
-  echo -e "$options" | calos-launch-walker --dmenu --width 295 --minheight 1 --maxheight 600 -p "$prompt…" "${args[@]}" 2>/dev/null
+  echo -e "$options" | calos-launch-walker --dmenu -N -H --minwidth 225 --minheight 1 --maxheight 600 -p "$prompt…" "${args[@]}" 2>/dev/null
 }
 
 terminal() {
@@ -50,14 +50,13 @@ show_style_menu() {
   *Theme*) show_theme_menu ;;
   *Font*) show_font_menu ;;
   *Background*) calos-theme-bg-next ;;
-  *Screensaver*) open_in_editor ~/.config/omarchy/branding/screensaver.txt ;;
-  *About*) open_in_editor ~/.config/omarchy/branding/about.txt ;;
+  *Screensaver*) open_in_editor ~/.config/calos/branding/screensaver.txt ;;
   *) show_main_menu ;;
   esac
 }
 
 show_theme_menu() {
-  theme=$(menu "Theme" "$(calos-theme-list)" "")
+  theme=$(menu "Select a Theme" "$(calos-theme-list)" "")
   if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
     back_to show_style_menu
   else
@@ -120,7 +119,8 @@ show_update_process_menu() {
 }
 
 show_system_menu() {
-  case $(menu "System" "󱄄  Screensaver\n󰜉  Restart\n󰐥  Shutdown") in
+  case $(menu "System" "  Packages\n󱄄  Screensaver\n󰜉  Restart\n󰐥  Shutdown") in
+  *Packages*) alacritty --class Calos -e calos-pkg-list ;;
   *Screensaver*) calos-launch-screensaver force ;;
   *Restart*) systemctl reboot ;;
   *Shutdown*) systemctl poweroff ;;
@@ -129,7 +129,7 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  go_to_menu "$(menu "Select" "󰀻  Apps\n󰸌  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
+  go_to_menu "$(menu "Settings" "󰀻  Apps\n󰸌  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
 }
 
 go_to_menu() {
