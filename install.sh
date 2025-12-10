@@ -7,19 +7,6 @@ export PATH="$HOME/.local/share/calos/bin:$PATH"
 CALOS_INSTALL=~/.local/share/calos/install
 
 clear
-#echo "Installation Starting..."
-#echo
-#echo "Please note, this install script will make the current user the default for the login process, bypassing the input user prompt."
-#sleep 1
-#echo "If you would like to change that, make sure to edit (or remove) /etc/systemd/system/getty@tty1.service.d/skip-username.conf (requires sudo)"
-#sleep 1
-#echo "Only do this if you would like to allow multiple user/DE logins or change the default user login!"
-#sleep 5
-#echo
-#echo
-#echo "Ready?"
-#echo
-#echo
 
 #echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
 
@@ -31,19 +18,20 @@ source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
 
-git clone https://aur.archlinux.org/yay.git
-cd yay
+sudo pacman -S --needed base-devel
+git clone https://aur.archlinux.org/paru.git
+cd paru
 makepkg -si
 
-echo "yay installed! Resuming install"
+echo "paru installed! Resuming install..."
 sleep 5
 clear
 cd ~/.local/share/calos
 
-yay walker
-yay python-terminaltexteffects
-yay gpu-screen-recorder
-yay yaru-icon-theme
+paru -S --noconfirm walker --skipreview --removemake --cleanafter
+paru -S --noconfirm python-terminaltexteffects --skipreview --removemake --cleanafter
+paru -S --noconfirm gpu-screen-recorder --skipreview --removemake --cleanafter
+paru -S --noconfirm yaru-icon-theme --skipreview --removemake --cleanafter
 
 # Packaging
 source $CALOS_INSTALL/packages.sh
@@ -55,14 +43,11 @@ source $CALOS_INSTALL/packaging/tuis.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
-# source $CALOS_INSTALL/config/git.sh
 source $CALOS_INSTALL/config/increase-sudo-tries.sh
 source $CALOS_INSTALL/config/increase-lockout-limit.sh
 source $CALOS_INSTALL/config/ssh-flakiness.sh
-# source $CALOS_INSTALL/config/detect-keyboard-layout.sh
 source $CALOS_INSTALL/config/localdb.sh
 source $CALOS_INSTALL/config/hardware/network.sh
-# source $CALOS_INSTALL/config/hardware/fix-fkeys.sh
 source $CALOS_INSTALL/config/hardware/bluetooth.sh
 source $CALOS_INSTALL/config/hardware/usb-autosuspend.sh
 source $CALOS_INSTALL/config/hardware/ignore-power-button.sh
