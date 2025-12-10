@@ -1,5 +1,5 @@
 format = """
-$username\
+[󰣇 ](fg:blue)\
 $hostname\
 $directory\
 $git_branch\
@@ -7,7 +7,6 @@ $git_state\
 $git_status\
 $cmd_duration\
 $line_break\
-$python\
 $character"""
 
 [directory]
@@ -42,5 +41,5 @@ format = "[$duration]($style) "
 style = "yellow"
 
 [python]
-format = "[$virtualenv]($style) "
+format = " "
 style = "bright-black"
