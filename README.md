@@ -43,7 +43,7 @@ tl;dr its dotfiles baby
 
 ### Style
 
-Regardless of how you feel about Omarchy, most of us can agree that it does look pretty. CalOS builds off of the themes of Omarchy and extends them into multiple facets of the operating system. Many, many, many (autistic) hours were spent tweaking each theme CalOS ships with to compliment the entire OS. Your waybar, audio visualize, terminal and system monitoring tools will all change based on the theme you're feeling. This took so long you son of a bitch you better change themes often.
+Regardless of how you feel about Omarchy, most of us can agree that it does look pretty. CalOS builds off of the themes of Omarchy and extends them into multiple facets of the operating system. Many, many, many (autistic) hours were spent tweaking each theme CalOS ships with to compliment the entire OS. Your waybar, audio visualizer, terminal and system monitoring tools will all change based on the theme you're feeling. This took so long you son of a bitch you better use this feature.
 
 <p align="center">
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/9bb5831b-fa81-4821-8e5d-cc677223b05d" />
@@ -60,7 +60,7 @@ This is a pretty decent spot to talk about how to interact with the operating sy
 
 ## How 2 Install
 
-**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anywaym, you dummy).
+**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy).
 
 ```
 sudo pacman -S git nano
