@@ -1,9 +1,17 @@
-# UNDER CONSTRUCTION UNTIL 2.0
+<p align="center">
+<img width="697" height="564" alt="image" src="https://github.com/user-attachments/assets/e8a122c1-2a36-4270-ae76-c4e85590ee52" />
+</p>
+
 
 # calOS
-CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of, tailored to desktops. CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (only 600+ packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.**
+CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of, tailored to desktops. CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (less than 600 packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.** This OS is basically vanilla arch with hyprland + themes.
+
+CalOS is comprised of 3 main 'parts'. The first is Arch+Hyprland, with a hefty amount of intelligent, yet configurable, keybinds/defaults. Walker interacts with your system through launching applications and its extensive dmenu support. A customized Mechabar (waybar) helps monitor your system as well interact with your hyprland configuration. As aforementioned, this is primarily a desktop-friendly configuration. Features such as battery monitoring, lockscreens and power profiles (performance all the way) are not present by default.
 
 tl;dr its dotfiles baby
+<p align="center">
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/bb2a9d95-0ad6-422b-a9ef-7b96224bf1fd" />
+</p>
 
 ## Overview
 
@@ -17,6 +25,7 @@ tl;dr its dotfiles baby
   - Super + S for System Monitoring (btop++).
   - Super + N for Neovim.
   - Super + Y for Yazi (file manager).
+  - Super + Q to close the active window.
 * `SUPER + CTRL` brings up all of your system-based keybinds. The binds below assume you are already holding down SUPER + CTRL.
 ```
  + L enables up your screensaver.
@@ -28,33 +37,30 @@ tl;dr its dotfiles baby
  + I shows internet settings (impala).
 ```
 * `SUPER + SHIFT` are the browser-based keybinds. Refer to the keybindings.conf file in your ~/.config/hypr folder to easily change them. By default they open up popular webpages.
+* Gaming friendly. Look into the `games.conf` file in your hyprland config folder to see all features. Includes a gaming submap bound to `Super + CTRL + G`, a special gaming workspace mode and support for steam games.
+* A highly configurable systemd service that launches on your **first terminal only**. Want to run certain startup scripts/display your cringe-inducing fastfetch configutation on the first terminal? Now you can! Once the first terminal launches a service begins that prevents it from launching again afterwards. 
 
 
 ### Style
 
-* Changed default theme on first launch. Make it feel more Hyprland-y.
-* Removed Omarchy logo and replaced with Arch logo in almost every instance. Felt kind of weird doing this but ultimately this is an Arch distro first and foremost.
-* Added more themes to the install. Parsed every theme to make sure it was uniform with the rest of the system; e.g. blueridge would overwrite your font when you switched to it, now it doesn't. Also removed super bright themes because???
-* **Made a custom starship bash prompt for every theme included in the install**. This took HOURS. A different starship prompt. For every theme. I hate being autistic.
-* Animations added for workspaces and specialWorkspaceIn/Out.
-* Changed default cursor to look more _uhh_ not boring.
-* Cool Limine background #wow #whoa
+Regardless of how you feel about Omarchy, most of us can agree that it does look pretty. CalOS builds off of the themes of Omarchy and extends them into multiple facets of the operating system. Many, many, many (autistic) hours were spent tweaking each theme CalOS ships with to compliment the entire OS. Your waybar, audio visualize, terminal and system monitoring tools will all change based on the theme you're feeling. This took so long you son of a bitch you better change themes often.
 
-### Usability
+<p align="center">
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/9bb5831b-fa81-4821-8e5d-cc677223b05d" />
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/01baaed9-be8f-40aa-98ec-8974084dceee" />
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/55714cf8-73b5-4179-ab6d-2ce10fe400b1" />
+</p>
 
-* Added support for specialWorkspaces for gaming. Hit SUPER, G to easily switch between your currently running game and workspace(s). Will work alongside gamescope. Check hyprland.conf and autostart.conf for more information.
-* Changed layering for waybar so it's more compatible for gaming across the board.
-* Tweaked various settings and defaults. Feel free to parse them yourself, one of Omarchy's strengths is how configurable it is so if I added something it doesn't really matter, just change it.
-* Changed firefox to the default browser. Get wrecked, Google.
-* Some cool defaults in autostart.conf, including timers for launching applications in a specific order. Super helpful for layouts. Additional package launches are commented out for your convenience.
-* Moved around the main menu. Config is now front and center for easy access to your configuration files. Removed redundant menu items.
-* A ton of other shit I just don't feel like going over.
+This is a pretty decent spot to talk about how to interact with the operating system as a whole.
+  - Workspace 1 is always active, even if it's blank (this allows you to scroll through it even if there are no windows currently active).
+  - Workspace 2 deals with system interaction. Your btop++ lives here, as does an interactive terminal. CAVA (your audio visualizer) and cmus (tui-based music player) are here.
+  - Workspace 3 is your gaming stuff. Discord. Steam. 
 
 # Installation and Configuration
 
 ## How 2 Install
 
-**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway).
+**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anywaym, you dummy).
 
 ```
 sudo pacman -S git nano
@@ -73,15 +79,12 @@ From there, clone this repository:
 ```
 git clone https://github.com/criticalart/calos
 ```
-Then cd into /calos/ and ./install.sh. Wow crazy. **Don't do it yet though**, there are a few things you have to configure below:
+Then cd into /calos/ and ./install.sh. Wow crazy. 
 
-## Required Configuration
+## Kind of Required Configuration
 
 **The following settings must be changed for the user experience, or whatever.**
 
-* Under /calos/config/hypr **make sure to change the monitors.conf file** to match your respective resolution/refresh rate.
+* Under ~/.config/hypr **make sure to change the monitors.conf file** to match your respective resolution/refresh rate.
 * I always felt that Hyprland by default was a bit too sensitive with the mouse, so I lowered the sensitivity to -0.5. Simply comment this line our or change it to your preference.
 * That's all for the required configurations. I encourage you to do your own research and edit this to your heart's content.
-
-
-That's all there is to it. Omarchy is an absolutely incredible tool but it's a bit too opinionated for me so I made calOS. Try it out and make your own fork/OS afterwards. Thank you DHH/basecamp for documenting everything as well as you did. Made it super easy to make this.
