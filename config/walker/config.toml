@@ -6,7 +6,8 @@ global_argument_delimiter = "#"                                             # qu
 exact_search_prefix = "'"                                                   # disable fuzzy searching
 theme = "calos-default"                                                   # theme to use
 disable_mouse = false                                                       # disable mouse (on input and list only)
-additional_theme_location = "~/.local/share/calos/default/walker/themes/"
+debug = false
+additional_theme_location = "~/.config/walker/themes/"
 
 [shell]
 anchor_top = true
@@ -23,7 +24,6 @@ next = ["Down"]
 previous = ["Up"]
 toggle_exact = ["ctrl e"]
 resume_last_query = ["ctrl r"]
-quick_activate = []
 
 [providers]
 default = [
@@ -143,4 +143,3 @@ clipboard = [
   { action = "toggle_images", global = true, label = "toggle images", bind = "ctrl i", after = "ClearReload" },
   { action = "edit", bind = "ctrl o" },
 ]
-
