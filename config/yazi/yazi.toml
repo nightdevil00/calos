@@ -15,6 +15,10 @@ music = [
 { run = 'ffplay -nodisp -autoexit "$@"' },
 ]
 
+video = [
+{ run = 'ffplay "$@"' },
+]
+
 [open]
 
 rules = [
@@ -43,10 +47,16 @@ rules = [
 
 { name = "*.css", use = "text" },
 
+{ name = "*.js", use = "text" },
+
 { name = "*.mp3", use = "music"},
 
 { name = "*.wav", use = "music"},
 
-{ name = "*.ogg", use = "music"}
+{ name = "*.ogg", use = "music"},
+
+{ name = "*.mkv", use = "video"},
+
+{ name = "*.mp4", use = "video"}
 
 ]
