@@ -12,10 +12,9 @@ trap exit_screensaver SIGINT SIGTERM SIGHUP SIGQUIT
 hyprctl keyword cursor:invisible true
 
 while true; do
-  effect=$(tte 2>&1 | grep -oP '{\K[^}]+' | tr ',' ' ' | tr ' ' '\n' | sed -n '/^beams$/,$p' | sort -u | shuf -n1)
   tte -i ~/.config/calos/branding/screensaver.txt \
-    --frame-rate 240 --canvas-width 0 --canvas-height $(($(tput lines) - 2)) --anchor-canvas c --anchor-text c \
-    "$effect" &
+    --frame-rate 144 --canvas-width 0 --canvas-height 0 --reuse-canvas --anchor-canvas c --anchor-text c --random-effect --exclude-effects dev_worm matrix colorshift \
+    --no-eol --no-restore-cursor &
   while pgrep -x tte >/dev/null; do
     if read -n 1 -t 3; then
       exit_screensaver
