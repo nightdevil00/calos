@@ -1,21 +1,18 @@
-# calOS
-Arch/Hyprland OS based on Omarchy with extensive edits. Much less opinionated. Much less bloat. Configured for desktop users. **DO NOT try this out unless you are somewhat competent with a terminal.** This does not support updates via Omarchy. You must know how to update Arch yourself and all the maintenence that comes alongside it. It is essentially a bare Arch Linux install with Hyprland + Omarchy theming + menu support.
+# UNDER CONSTRUCTION UNTIL 2.0
 
-## Changes
+# calOS
+CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of. CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (only 600+ packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.**
+
+tl;dr its dotfiles baby
+
+## Overview
 
 ### System
 
-* No longer forces disk encryption. You may choose any filesystem you would like. (You should still use btrfs though).
-* Plymouth is no longer supported or used. In its place is a tty/drop-in script to log a specific user into Hyprland automatically with a bash_profile script. **Can be configured/removed in skip-username.conf.**
-* **Heavily** debloated the initial install. Final package count is ~650. Many re-installs went into figuring out what can and can't be removed.
-* No longer a dev-oriented build. Removed most, if not all, traces of dev environments. If you use your PC for browsing/gaming, this is for you.
-* Customized boot-message shell script that allows you to launch or perform any command from the first, and only first, terminal window. Want to start your session with fastfetch or fortune displayed? Go for it. Easily customizable in your .bashrc after install.
-* Snapshots are no longer forced/required. Since a specific filesystem/disk encryption is no longer forced you are free to choose your own service. Snapper is still recommended for btrfs.
-* Limine is still the default bootloader because why the fuck would you use GRUB
-* While the install was heavily debloated, a few additional packages were added; firefox, gamescope and fortune-mod. Honestly you should be using the first two anyways. Actually fuck gamescope it doesn't even work. Removed.
-* Removed anything that has to do with portability, such as battery display. This is meant for a desktop. Since that information is not relevant waybar has been edited to give more information on your system, such as temps and CPU/RAM usage.
-* CAPS LOCK IS BACK. (Xcompose is out)
-* yazi baby. Nautilus is out. He's so hot right now. Use SUPER, F or type y or yazi in terminal. Defaults to allow hidden files.
+* A custom hyprland.conf file with numerous keybinds and configurations.
+* `SUPER + CTRL` brings up all of your system-based keybinds. This includes a clipboard manager (clipse), power menu, screensaver, internet/bluetooth/waybar management and much more.
+* `SUPER + SHIFT` are the browser-based keybinds. Examples include 
+
 
 ### Style
 
