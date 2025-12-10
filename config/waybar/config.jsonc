@@ -95,6 +95,20 @@
 		"tooltip-format": "{:%I:%M %p}"
 	},
 
+"cava": {
+    "cava_config": "/home/arthur/.config/cava/config",
+    "framerate": 120,
+    "autosens": 1,
+    "bars": 12,
+    "method": "pipewire",
+    "source": "auto",
+    "bar_delimiter": 0,
+    "input_delay": 2,
+    "sleep_timer": 2,
+    "hide_on_silence": true,
+    "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ]
+},
+
 	/*--------------
 		calendar
 	--------------*/
@@ -269,7 +283,11 @@
 			"btop": "BTOP++ System Information",
       "cmus": "cmus Music Player",
       "vesktop": "Discord",
-      "steam": "Steam"
+      "steam": "Steam",
+      "FFPWA-01K961PSAZSCYS2324FFDRTC7Q": "Apple Music",
+      "FFPWA-01K965RT5B50H7XFYV0EAQN4B8": "ArchLinux Wiki",
+      "FFPWA-01KAC9901ABNXA5Q8EHX1KRDFV": "HBO Max",
+      "FFPWA-01K966XKVA9QGPGYZB5K84ZBR8": "Hyprland Wiki"
 		},
 		// "separate-outputs":
 		"icon": false,
@@ -350,7 +368,7 @@
 		// "rotate":
 		"min-length": 4,
 		"max-length": 4,
-		//"on-click": "~/.config/waybar/scripts/theme-switcher.sh next",
+		"on-click": "calos-menu",
 		// "on-click-middle":
 		// "on-click-right": "~/.config/waybar/scripts/theme-switcher.sh prev"
 		// "on-scroll-up":
@@ -375,7 +393,7 @@
 		// "rotate":
 		// "min-length":
 		// "max-length":
-		// "on-click":
+		"on-click": "calos-menu",
 		// "on-click-middle":
 		// "on-click-right":
 		// "on-scroll-up":
@@ -468,7 +486,7 @@
 
 	"custom/power_menu": {
 		"format": "\uf359",
-		"on-click": "alacritty --class=Impala --hold -e fastfetch -c ~/.config/fastfetch/config-small.jsonc",
+		"on-click": "alacritty --class=About --hold -e fastfetch -c ~/.config/fastfetch/config-small.jsonc",
 		"tooltip": false
 	},
 
@@ -487,7 +505,7 @@
 		// "exec-on-event":
 		// "hide-empty-text":
 		"return-type": "json",
-		"interval": 1800,
+		"interval": 7200,
 		// "restart-interval":
 		// "signal":
 		"format": "{}",
@@ -495,7 +513,7 @@
 		// "rotate":
 		"min-length": 2,
 		"max-length": 2,
-		"on-click": "alacritty --class=Impala -e ~/.config/waybar/scripts/system-update.sh start"
+		"on-click": "alacritty --class=System-Update -e ~/.config/waybar/scripts/system-update.sh start"
 		// "on-click-middle":
 		// "on-click-right":
 		// "on-scroll-up":
