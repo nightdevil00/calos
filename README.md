@@ -35,6 +35,7 @@ tl;dr its dotfiles baby
  + B brings up the Bluetooth menu (bluetui).
  + S launches walker's dmenu, specifically for power options.
  + I shows internet settings (impala).
+ + T is your theme menu. Refer to the style section below.
 ```
 * `SUPER + SHIFT` are the browser-based keybinds. Refer to the keybindings.conf file in your ~/.config/hypr folder to easily change them. By default they open up popular webpages.
 * Gaming friendly. Look into the `games.conf` file in your hyprland config folder to see all features. Includes a gaming submap bound to `Super + CTRL + G`, a special gaming workspace mode and support for steam games.
