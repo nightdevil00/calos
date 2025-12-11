@@ -77,15 +77,23 @@ echo "Enabling polkit service and applying miscellaneous fixes."
 systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
 
-sudo pacman -Rns maven
-sudo pacman -Rdd greetd-agreety
+sudo pacman -Rns maven --noconfirm
+sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
 
 echo "Configuring Walker, Elephant and Waybar as services..."
 elephant service enable
 systemctl --user enable elephant.service
+systemctl --user start elephant.service
 systemctl --user enable waybar.service
-sleep 4
+echo
+echo
+sleep 2
+echo "Cleaning up installation..."
+sudo rm -rf ~/go/
+rm -rf ~/.local/share/calos/paru/
+chmod +x ~/.local/share/calos/bin/calos-pkg-list
+rm ~/.local/share/calos/bin/calos-tui-install
 
 cat ~/.local/share/calos/logo.txt
 # Reboot
