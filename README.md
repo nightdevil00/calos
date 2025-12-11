@@ -26,7 +26,7 @@ tl;dr its dotfiles baby
   - Super + N for Neovim.
   - Super + Y for Yazi (file manager).
   - Super + Q to close the active window.
-* `SUPER + CTRL` brings up all of your system-based keybinds. The binds below assume you are already holding down SUPER + CTRL.
+* `SUPER + CTRL` brings up all of your system management keybinds. The binds below assume you are already holding down SUPER + CTRL.
 ```
  + L enables up your screensaver.
  + N will toggle hyprsunet (night shift).
