@@ -73,7 +73,7 @@ Trying to distance itself from various "opinionated" setups as much as possible,
 ```
 sudo pacman -S git
 ```
-Install git to clone the repository and nano to edit a few configuration files below.
+Install git to clone the repository into the specified directory.
 
 Create your directories:
 ```
