@@ -16,7 +16,6 @@ sudo pacman -S --noconfirm --needed \
   fzf \
   greetd \
   greetd-tuigreet \
-  gum \
   hyprland \
   hypridle \
   hyprland-qtutils \
@@ -25,10 +24,7 @@ sudo pacman -S --noconfirm --needed \
   hyprsunset \
   inetutils \
   impala \
-  less \
   mako \
-  man \
-  nano \
   noto-fonts \
   noto-fonts-cjk \
   noto-fonts-emoji \
