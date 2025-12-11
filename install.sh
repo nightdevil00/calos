@@ -65,7 +65,7 @@ echo "Creating login service."
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/issue /etc/issue
 sudo cp ~/.local/share/calos/install/motd /etc/motd
-yay -S --noconfirm --needed rose-pine-hyprcursor
+paru -S --noconfirm --needed rose-pine-hyprcursor
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
