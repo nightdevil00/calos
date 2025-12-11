@@ -21,7 +21,7 @@ source $CALOS_INSTALL/preflight/repositories.sh
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
 cd paru
-makepkg -si
+makepkg -si --noconfirm
 
 echo "paru installed! Resuming install..."
 sleep 5
