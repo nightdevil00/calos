@@ -55,7 +55,12 @@ Regardless of how you feel about Omarchy, most of us can agree that it does look
 This is a pretty decent spot to talk about how to interact with the operating system as a whole.
   - Workspace 1 is always active, even if it's blank (this allows you to scroll through it even if there are no windows currently active).
   - Workspace 2 deals with system interaction. Your btop++ lives here, as does an interactive terminal. CAVA (your audio visualizer) and cmus (tui-based music player) are here.
-  - Workspace 3 is your gaming stuff. Discord. Steam. 
+  - Workspace 3 is your gaming stuff. Discord. Steam.
+
+### Defaults
+
+Trying to distance itself from various "opinionated" setups as much as possible, calOS ships with a few defaults. These include: Firefox (web browser), Alacritty (terminal), cmus (tui music player), paru (it's better than yay stop being a baby and just try it), various tui-based applications (dust, bluetui, imapala), I forgot everything else. 
+* **Open your system settings (SUPER + ESCAPE) and navigate to System -> Packages to see what is installed.** Remove whatever you dislike from there. 
 
 # Installation and Configuration
 
