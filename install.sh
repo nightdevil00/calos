@@ -57,6 +57,7 @@ sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
 sleep 2
 clear
 echo "Creating login service."
+sleep 2
 
 #sudo mkdir /etc/systemd/system/getty@tty1.service.d
 #sudo cp ~/.local/share/calos/install/skip-username.conf /etc/systemd/system/getty@tty1.service.d/skip-username.conf
@@ -75,7 +76,8 @@ echo
 echo
 clear
 echo "Enabling polkit service and applying miscellaneous fixes."
-
+sleep 2
+echo
 systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
 
@@ -103,5 +105,7 @@ cat ~/.local/share/calos/logo.txt
 echo
 echo
 echo "Installation completed. Reboot to access system."
-echo "Make sure to read through your configuration files to familarize yourself with the system!"
+echo "Make sure to read through your configuration files to familarize yourself with operations!"
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
+echo
+echo
