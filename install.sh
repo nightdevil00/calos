@@ -84,6 +84,12 @@ sudo pacman -Rns maven
 sudo pacman -Rdd greetd-agreety
 sudo systemctl enable greetd.service
 
+echo "Configuring Elephant..."
+elephant service enable
+sudo systemctl --user start elephant.service
+sleep 4
+
+
 # Reboot
 echo
 echo
