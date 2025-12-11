@@ -28,10 +28,7 @@ sleep 5
 clear
 cd ~/.local/share/calos
 
-paru -S --noconfirm walker --skipreview --removemake --cleanafter
-paru -S --noconfirm python-terminaltexteffects --skipreview --removemake --cleanafter
-paru -S --noconfirm gpu-screen-recorder --skipreview --removemake --cleanafter
-paru -S --noconfirm yaru-icon-theme --skipreview --removemake --cleanafter
+paru -S --noconfirm --needed walker python-terminaltexteffects gpu-screen-recorder yaru-icon-theme elephant clipse elephant-desktopapplications --skipreview --removemake --cleanafter
 
 # Packaging
 source $CALOS_INSTALL/packages.sh
@@ -84,16 +81,16 @@ sudo pacman -Rns maven
 sudo pacman -Rdd greetd-agreety
 sudo systemctl enable greetd.service
 
-echo "Configuring Elephant..."
+echo "Configuring Walker, Elephant and Waybar as services..."
 elephant service enable
-sudo systemctl --user start elephant.service
+systemctl --user enable elephant.service
+systemctl --user enable waybar.service
 sleep 4
 
-
+cat ~/.local/share/calos/logo.txt
 # Reboot
 echo
 echo
 echo "Installation completed. Reboot to access system."
-echo "Prior to reboot, navigate to ~/.config/hypr/ and use nano to edit the 'monitors.conf' file with your proper resolution/refresh rate."
-echo "For further system tuning, please look into removing elephant and waybar as an exec-once variable in your hyprland configuration and adding them as system services."
-echo
+echo "Make sure to read through your configuration files to familarize yourself with the system!"
+echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
