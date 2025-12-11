@@ -1,6 +1,8 @@
 #!/bin/bash
 
 # We overwrite the whole thing knowing the limine-update will add the entries for us
+sudo rm /boot/EFI/limine/limine.conf
+
 sudo tee /boot/limine.conf <<EOF >/dev/null
 ### Read more at config document: https://github.com/limine-bootloader/limine/blob/trunk/CONFIG.md
 timeout: 3
