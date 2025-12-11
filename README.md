@@ -66,7 +66,7 @@ Trying to distance itself from various "opinionated" setups as much as possible,
 
 ## How 2 Install
 
-**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy).
+**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy). **Pipewire must be used.** Pulseaudio is old.
 
 ```
 sudo pacman -S git nano
