@@ -7,7 +7,7 @@ catch_errors() {
   echo "This command halted with exit code $?:"
   echo "$BASH_COMMAND"
   echo
-  echo "welp"
+  echo "welp shit broke"
 
   echo "You can retry by running: bash ~/.local/share/calos/install.sh"
 }
