@@ -54,7 +54,8 @@ source $CALOS_INSTALL/login/limine.sh
 
 sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
 sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
-
+sleep 2
+clear
 echo "Creating login service."
 
 #sudo mkdir /etc/systemd/system/getty@tty1.service.d
@@ -67,17 +68,17 @@ echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | 
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
 echo "Boot message service added and enabled."
-
+sleep 3
 xdg-settings set default-web-browser firefox.desktop
 
 echo
 echo
+clear
 echo "Enabling polkit service and applying miscellaneous fixes."
 
 systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
 
-sudo pacman -Rns maven --noconfirm
 sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
 
@@ -94,6 +95,8 @@ sudo rm -rf ~/go/
 rm -rf ~/.local/share/calos/paru/
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 rm ~/.local/share/calos/bin/calos-tui-install
+sudo pacman -Rns maven --noconfirm
+sudo pacman -Rns rust --noconfirm
 
 cat ~/.local/share/calos/logo.txt
 # Reboot
