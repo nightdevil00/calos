@@ -18,7 +18,7 @@ sudo pacman -S --noconfirm --needed \
   greetd-tuigreet \
   hyprland \
   hypridle \
-  hyprland-qtutils \
+  hyprland-guiutils \
   hyprpicker \
   hyprshot \
   hyprsunset \
