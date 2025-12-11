@@ -13,6 +13,10 @@ tl;dr its dotfiles baby
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/bb2a9d95-0ad6-422b-a9ef-7b96224bf1fd" />
 </p>
 
+### Who is calOS for?
+
+CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very game-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic.
+
 ## Overview
 
 ### System
