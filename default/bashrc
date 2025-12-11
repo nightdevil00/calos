@@ -16,14 +16,16 @@ alias ls='eza --icons=auto'
 alias grep='grep --color=auto'
 alias dota='steam steam://rungameid/570/'
 alias please='sudo'
-alias cat='bat '
+alias cat='bat --style grid,header,header-filename,header-filesize '
 alias update='sudo pacman -Syu'
 alias upgrade='sudo pacman -Syu'
+alias svim='sudoedit '
 
 if ! systemctl is-active --quiet bootmsg; then
   fastfetch
   echo
-  echo "Welcome to $HOSTNAME! Running daemon diagnostics:"
+  echo "Welcome to $HOSTNAME! Running initial startup scripts and daemon diagnostics:"
+  pamixer --set-volume 80
   systemctl --failed
   echo
   sudo systemctl start bootmsg.service
@@ -31,7 +33,10 @@ if ! systemctl is-active --quiet bootmsg; then
   fortune
   echo
   echo "happy autisming"
-  echo " "
+  echo
 fi
+
+# Set up fzf key bindings and fuzzy completion
+eval "$(fzf --bash)"
 
 export STARSHIP_CONFIG=~/.config/starship.toml
