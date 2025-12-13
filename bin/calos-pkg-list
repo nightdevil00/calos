@@ -12,4 +12,4 @@ fzf_args=(
   --color 'pointer:red,marker:red'
 )
 
-pkg_names=$(paru -Qqe | fzf "${fzf_args[@]}")
+pkg_names=$(pacman -Qqe | fzf "${fzf_args[@]}")
