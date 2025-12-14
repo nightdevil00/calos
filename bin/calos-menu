@@ -41,7 +41,7 @@ terminal() {
 }
 
 edit_in_nvim() {
-  notify-send "Editing config file" "$1"
+  notify-send "Editing configuration file in Neovim" "$1"
   $TERMINAL -e nvim "$1"
 }
 
@@ -50,7 +50,7 @@ show_style_menu() {
   *Theme*) show_theme_menu ;;
   *Font*) show_font_menu ;;
   *Background*) calos-theme-bg-next ;;
-  *Screensaver*) open_in_editor ~/.config/calos/branding/screensaver.txt ;;
+  *Screensaver*) edit_in_nvim ~/.config/calos/branding/screensaver.txt ;;
   *) show_main_menu ;;
   esac
 }
