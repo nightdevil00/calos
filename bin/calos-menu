@@ -46,7 +46,7 @@ edit_in_nvim() {
 }
 
 show_style_menu() {
-  case $(menu "Style" "󰸌  Theme\n  Font\n  Background\n󱄄  Screensaver\n  About") in
+  case $(menu "Style" "󰸌  Theme\n  Font\n  Background\n󱄄  Screensaver") in
   *Theme*) show_theme_menu ;;
   *Font*) show_font_menu ;;
   *Background*) calos-theme-bg-next ;;
