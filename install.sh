@@ -96,7 +96,7 @@ cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
 cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
 cp ~/.local/share/calos/applications/limine-snapper-restore.desktop ~/.local/share/applications/
 sudo pacman -Rns maven --noconfirm
-sudo pacman -Rns rust --noconfirm
+#sudo pacman -Rns rust --noconfirm
 
 cat ~/.local/share/calos/logo.txt
 # Reboot
