@@ -281,14 +281,22 @@
 ; 4 = 1
 ; 5 = 1 # treble
 
-
 [color]
+
+# Colors can be one of seven predefined: black, blue, cyan, green, magenta, red, white, yellow.
+# Or defined by hex code '#xxxxxx' (hex code must be within ''). User defined colors requires
+# ncurses output method and a terminal that can change color definitions such as Gnome-terminal or rxvt.
+# if supported, ncurses mode will be forced on if user defined colors are used.
+# default is to keep current terminal color
+; background = default
+; foreground = default
+
+# Gradient mode, only hex defined colors (and thereby ncurses mode) are supported,
+# background must also be defined in hex  or remain commented out. 1 = on, 0 = off.
+# You can define as many as 8 different colors. They range from bottom to top of screen
 gradient = 1
-gradient_color_1 = '#FF5733'
-gradient_color_2 = '#FFC300'
-gradient_color_3 = '#C70039'
-gradient_color_4 = '#900C3F'
-gradient_color_5 = '#581845'
-gradient_color_6 = '#DAF7A6'
-gradient_color_7 = '#FFC300'
-gradient_color_8 = '#FF5733'
+gradient_count = 4
+gradient_color_4 = '#ff3d61'
+gradient_color_3 = '#f7768e'
+gradient_color_2 = '#ff9e64'
+gradient_color_1 = '#e0af68'
