@@ -15,16 +15,19 @@ source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
 
 sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si --noconfirm
+sudo pacman -S --noconfirm --needed yay
+sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
+#git clone https://aur.archlinux.org/paru.git
+#cd paru
+#makepkg -si --noconfirm
 
-echo "paru installed! Resuming install..."
-sleep 5
-clear
-cd ~/.local/share/calos
+#echo "paru installed! Resuming install..."
+#sleep 5
+#clear
+#cd ~/.local/share/calos
 
-paru -S --noconfirm --needed walker python-terminaltexteffects gpu-screen-recorder yaru-icon-theme elephant clipse elephant-desktopapplications elephant-menus elephant-calc --skipreview --removemake --cleanafter
+# paru -S --noconfirm --needed python-terminaltexteffects gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
+yay -S --noconfirm --needed python-terminaltexteffects gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --removemake --cleanafter
 
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
@@ -50,7 +53,8 @@ echo "Creating login service."
 sleep 2
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
-paru -S --noconfirm --needed rose-pine-hyprcursor
+# paru -S --noconfirm --needed rose-pine-hyprcursor --skipreview --removemake --cleanafter
+yay -S --noconfirm --needed rose-pine-hyprcursor --removemake --cleanafter
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
