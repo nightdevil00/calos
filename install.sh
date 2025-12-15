@@ -41,7 +41,7 @@ source $CALOS_INSTALL/config/hardware/network.sh
 source $CALOS_INSTALL/config/hardware/bluetooth.sh
 source $CALOS_INSTALL/config/hardware/usb-autosuspend.sh
 source $CALOS_INSTALL/config/hardware/ignore-power-button.sh
-source $CALOS_INSTALL/login/limine.sh
+source $CALOS_INSTALL/limine.sh
 
 sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
 sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
