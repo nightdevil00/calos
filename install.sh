@@ -9,10 +9,10 @@ clear
 #echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
 
 sleep 1
-source $CALOS_INSTALL/preflight/show-env.sh
+#source $CALOS_INSTALL/preflight/show-env.sh
 source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
-source $CALOS_INSTALL/preflight/repositories.sh
+#source $CALOS_INSTALL/preflight/repositories.sh
 
 sudo pacman -S --needed base-devel
 git clone https://aur.archlinux.org/paru.git
