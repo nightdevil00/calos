@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# We overwrite the whole thing knowing the limine-update will add the entries for us
+# Removing alternative limine.conf location for the sake of consistency/auto-updates
 sudo rm /boot/EFI/limine/limine.conf
 
 sudo tee /boot/limine.conf <<EOF >/dev/null
