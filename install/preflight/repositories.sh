@@ -9,8 +9,8 @@ if ! grep -q "ILoveCandy" /etc/pacman.conf; then
 fi
 
 # Set mirrors to global ones only
-echo -e "Server = https://geo.mirror.pkgbuild.com/\$repo/os/\$arch\nServer = https://mirror.rackspace.com/archlinux/\$repo/os/\$arch" |
-  sudo tee /etc/pacman.d/mirrorlist >/dev/null
+# echo -e "Server = https://geo.mirror.pkgbuild.com/\$repo/os/\$arch\nServer = https://mirror.rackspace.com/archlinux/\$repo/os/\$arch" |
+#  sudo tee /etc/pacman.d/mirrorlist >/dev/null
 
 # Only add Chaotic-AUR if the architecture is x86_64 so ARM users can build the packages
 #if [[ "$(uname -m)" == "x86_64" ]] && [ -z "$DISABLE_CHAOTIC" ]; then
