@@ -35,7 +35,6 @@ source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
 source $CALOS_INSTALL/config/increase-sudo-tries.sh
 source $CALOS_INSTALL/config/increase-lockout-limit.sh
-source $CALOS_INSTALL/config/ssh-flakiness.sh
 source $CALOS_INSTALL/config/localdb.sh
 source $CALOS_INSTALL/config/hardware/network.sh
 source $CALOS_INSTALL/config/hardware/bluetooth.sh
