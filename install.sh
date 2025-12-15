@@ -24,7 +24,7 @@ sleep 5
 clear
 cd ~/.local/share/calos
 
-paru -S --noconfirm --needed walker python-terminaltexteffects gpu-screen-recorder yaru-icon-theme elephant clipse elephant-desktopapplications --skipreview --removemake --cleanafter
+paru -S --noconfirm --needed walker python-terminaltexteffects gpu-screen-recorder yaru-icon-theme elephant clipse elephant-desktopapplications elephant-menus elephant-calc --skipreview --removemake --cleanafter
 
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
