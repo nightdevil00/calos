@@ -1,6 +1,4 @@
 #!/bin/bash
-
-# Exit immediately if a command exits with a non-zero status
 set -eE
 
 export PATH="$HOME/.local/share/calos/bin:$PATH"
@@ -11,8 +9,6 @@ clear
 #echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
 
 sleep 1
-
-# Preparation
 source $CALOS_INSTALL/preflight/show-env.sh
 source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
@@ -30,13 +26,10 @@ cd ~/.local/share/calos
 
 paru -S --noconfirm --needed walker python-terminaltexteffects gpu-screen-recorder yaru-icon-theme elephant clipse elephant-desktopapplications --skipreview --removemake --cleanafter
 
-# Packaging
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
 source $CALOS_INSTALL/packaging/lazyvim.sh
 source $CALOS_INSTALL/packaging/tuis.sh
-
-# Configuration
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
@@ -48,8 +41,6 @@ source $CALOS_INSTALL/config/hardware/network.sh
 source $CALOS_INSTALL/config/hardware/bluetooth.sh
 source $CALOS_INSTALL/config/hardware/usb-autosuspend.sh
 source $CALOS_INSTALL/config/hardware/ignore-power-button.sh
-
-# Login
 source $CALOS_INSTALL/login/limine.sh
 
 sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
@@ -80,9 +71,9 @@ sleep 2
 echo
 systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
-
 sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
+echo
 
 echo "Configuring Walker, Elephant and Waybar as services..."
 elephant service enable
