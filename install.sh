@@ -52,7 +52,6 @@ sleep 2
 #sudo mkdir /etc/systemd/system/getty@tty1.service.d
 #sudo cp ~/.local/share/calos/install/skip-username.conf /etc/systemd/system/getty@tty1.service.d/skip-username.conf
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
-sudo cp ~/.local/share/calos/install/issue /etc/issue
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 paru -S --noconfirm --needed rose-pine-hyprcursor
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
