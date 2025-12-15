@@ -48,9 +48,6 @@ sleep 2
 clear
 echo "Creating login service."
 sleep 2
-
-#sudo mkdir /etc/systemd/system/getty@tty1.service.d
-#sudo cp ~/.local/share/calos/install/skip-username.conf /etc/systemd/system/getty@tty1.service.d/skip-username.conf
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 paru -S --noconfirm --needed rose-pine-hyprcursor
@@ -86,6 +83,9 @@ sudo rm -rf ~/go/
 rm -rf ~/.local/share/calos/paru/
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 rm ~/.local/share/calos/bin/calos-tui-install
+cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
+cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
+cp ~/.local/share/calos/applications/limine-snapper-restore.desktop ~/.local/share/applications/
 sudo pacman -Rns maven --noconfirm
 sudo pacman -Rns rust --noconfirm
 
