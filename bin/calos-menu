@@ -46,22 +46,17 @@ edit_in_nvim() {
 }
 
 show_style_menu() {
-  case $(menu "Style" "󰸌  Theme\n  Font\n  Background\n󱄄  Screensaver") in
+  case $(menu "Style" "󰸌  Theme\n  Font\n  Background\n󱄄  Fastfetch") in
   *Theme*) show_theme_menu ;;
   *Font*) show_font_menu ;;
   *Background*) calos-theme-bg-next ;;
-  *Screensaver*) edit_in_nvim ~/.config/calos/branding/screensaver.txt ;;
+  *Fastfetch*) edit_in_nvim ~/.config/calos/branding/about.txt ;;
   *) show_main_menu ;;
   esac
 }
 
 show_theme_menu() {
-  theme=$(menu "Select a Theme" "$(calos-theme-list)" "")
-  if [[ "$theme" == "CNCLD" || -z "$theme" ]]; then
-    back_to show_style_menu
-  else
-    calos-theme-set "$theme"
-  fi
+  walker -H -N -m menus:calosthemes --minwidth 200 --minheight 400 -p "Select a Theme"
 }
 
 show_font_menu() {
