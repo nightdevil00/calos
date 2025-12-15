@@ -9,6 +9,11 @@ clear
 #echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
 
 sleep 1
+echo "Welcome to calOS! The installer will begin by enabling the Chaotic-AUR to help make the install faster and more reliable"
+echo "yay will be installed by default. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
+echo "and remove the final two lines. Don't forget to uncomment multi-lib for Steam support as well!"
+echo "Installation starting..."
+sleep 4
 #source $CALOS_INSTALL/preflight/show-env.sh
 source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/chroot.sh
