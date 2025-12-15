@@ -281,14 +281,14 @@
 ; 4 = 1
 ; 5 = 1 # treble
 
-
 [color]
+
 gradient = 1
-gradient_color_1 = '#8BC34A'
-gradient_color_2 = '#CDDC39'
-gradient_color_3 = '#FFEB3B'
-gradient_color_4 = '#FFC107'
-gradient_color_5 = '#FF9800'
-gradient_color_6 = '#FF5722'
-gradient_color_7 = '#F44336'
-gradient_color_8 = '#E91E63'
+gradient_color_1 = '#80a0ff'
+gradient_color_2 = '#74b2ff'
+gradient_color_3 = '#79dac8'
+gradient_color_4 = '#85dc85'
+gradient_color_5 = '#36c692'
+gradient_color_6 = '#f09479'
+gradient_color_7 = '#e2637f'
+gradient_color_8 = '#ff5189'
