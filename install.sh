@@ -4,6 +4,8 @@ set -eE
 export PATH="$HOME/.local/share/calos/bin:$PATH"
 CALOS_INSTALL=~/.local/share/calos/install
 
+# Install Initialization
+
 clear
 sleep 1
 echo "Welcome to calOS!"
@@ -15,29 +17,34 @@ sleep 3
 echo
 echo "Installation starting..."
 sleep 5
-source $CALOS_INSTALL/preflight/trap-errors.sh
-source $CALOS_INSTALL/preflight/repositories.sh
+
+# Preinstall for error reporting and repository edits
+
+source $CALOS_INSTALL/preinstall/errors.sh
+source $CALOS_INSTALL/preinstall/repositories.sh
 
 sudo pacman -S --needed base-devel
 sudo pacman -S --noconfirm --needed paru
 clear
+
+# System critical AUR packages
+
 echo "Chaotic-AUR repository synced and paru has been installed."
-sleep 2
+sleep 3
 echo
 echo "The installer will now begin installing AUR programs required for system functionality."
 sleep 3
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
-
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
-# yay -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --removemake --cleanafter
-
 clear
+
+# Main packages, configuration and scripts 
+
 echo "AUR system packages built and installed successfully! Build files will be cleaned post-installation."
 sleep 3
 echo
 echo "Main packages and configuration files will now be installed..."
 sleep 3
-
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/packaging/fonts.sh
 source $CALOS_INSTALL/packaging/lazyvim.sh
@@ -45,6 +52,7 @@ source $CALOS_INSTALL/packaging/tuis.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
+source $CALOS_INSTALL/misc.sh
 
 clear
 echo "Checking hardware for Nvidia GPU..."
@@ -75,7 +83,7 @@ sleep 2
 clear
 
 echo "Creating login service..."
-sleep 5
+sleep 2
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
@@ -85,7 +93,7 @@ echo "Boot message service added and enabled. This is located in your home direc
 sleep 5
 clear
 
-echo "Enabling polkit service and applying miscellaneous fixes..."
+echo "Enabling system services for walker, elephant, waybar and applying miscellaneous fixes..."
 sleep 3
 xdg-settings set default-web-browser firefox.desktop
 echo
@@ -93,20 +101,17 @@ systemctl --user enable --now hyprpolkitagent.service
 sudo chmod 666 /dev/uinput
 sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
+elephant service enable
+systemctl --user enable --now elephant.service
+systemctl --user enable --now waybar.service
 clear
 
-echo "Configuring Walker, Elephant and Waybar as services..."
-sleep 3
-elephant service enable
-systemctl --user enable elephant.service
-systemctl --user start elephant.service
-systemctl --user enable waybar.service
-clear
+# Installation Cleanup
 
 echo "The installer will now begin removing unncessary files from this directory."
 sleep 1
 echo "Please keep all remaining files within this directory for system stability."
-sleep 1
+sleep 2
 echo
 echo "Cleaning up installation..."
 sleep 5
@@ -120,12 +125,13 @@ rm -rf ~/.local/share/calos/applications
 rm -rf ~/.local/share/calos/install
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
-
 sudo pacman -Rns maven --noconfirm
 #sudo pacman -Rns rust --noconfirm
 sudo updatedb
 sleep 2
 clear
+
+# Install Complete
 
 cat ~/.local/share/calos/install/logo.txt | tte expand
 echo
