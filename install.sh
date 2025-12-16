@@ -5,19 +5,16 @@ export PATH="$HOME/.local/share/calos/bin:$PATH"
 CALOS_INSTALL=~/.local/share/calos/install
 
 clear
-
-#echo "ExecStart=-/sbin/agetty -o '-p -- $USER' --noclear --skip-login - "'$TERM' | tee -a install/skip-username.conf
-
 sleep 1
-echo "Welcome to calOS! The installer will begin by enabling the Chaotic-AUR to help make the install faster and more reliable"
+echo "Welcome to calOS! The installer will begin by enabling the Chaotic-AUR to help make the install faster and more reliable."
+sleep 1
 echo "yay will be installed by default. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
 echo "and remove the final two lines. Don't forget to uncomment multi-lib for Steam support as well!"
-sleep 2
+sleep 3
 echo
 echo "Installation starting..."
 sleep 4
 source $CALOS_INSTALL/preflight/trap-errors.sh
-source $CALOS_INSTALL/preflight/chroot.sh
 source $CALOS_INSTALL/preflight/repositories.sh
 
 sudo pacman -S --needed base-devel
@@ -40,6 +37,7 @@ yay -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-
 
 clear
 echo "All utils successfully installed."
+sleep 1
 echo "Main packages and configuration files will now be installed..."
 sleep 3
 
@@ -50,21 +48,18 @@ source $CALOS_INSTALL/packaging/tuis.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
-source $CALOS_INSTALL/config/increase-sudo-tries.sh
-source $CALOS_INSTALL/config/increase-lockout-limit.sh
-source $CALOS_INSTALL/config/localdb.sh
-source $CALOS_INSTALL/config/hardware/network.sh
-source $CALOS_INSTALL/config/hardware/bluetooth.sh
-source $CALOS_INSTALL/config/hardware/usb-autosuspend.sh
-source $CALOS_INSTALL/config/hardware/ignore-power-button.sh
+
 clear
-echo "Checking for and installing Nvidia drivers if necessary..."
+echo "Checking hardware for Nvidia GPU..."
+sleep 1
+echo "Installer will download/update all required configuration files if found."
 sleep 1
 
 source $CALOS_INSTALL/nvidia.sh
-clear 
-echo "Resuming Installation"
 sleep 2
+clear 
+echo "Resuming Installation..."
+sleep 1
 source $CALOS_INSTALL/limine.sh
 
 sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
@@ -113,7 +108,8 @@ cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
 cp ~/.local/share/calos/applications/limine-snapper-restore.desktop ~/.local/share/applications/
 sudo pacman -Rns maven --noconfirm
 #sudo pacman -Rns rust --noconfirm
-
+sudo updatedb
+clear
 cat ~/.local/share/calos/logo.txt
 # Reboot
 echo
