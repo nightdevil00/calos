@@ -9,4 +9,7 @@ fi
 
 # Prevent systemd-networkd-wait-online timeout on boot
 sudo systemctl disable systemd-networkd-wait-online.service
-sudo systemctl mask systemd-networkd-wait-online.service
+sudo systemctl mask systemd-networkd-wait-online.service 
+
+# Turn on bluetooth by default
+chrootable_systemctl_enable bluetooth.service
