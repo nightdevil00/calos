@@ -77,6 +77,7 @@ env = LIBVA_DRIVER_NAME,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 EOF
   fi
-fi
 else
-  echo -e "No Nvidia GPU detected."
+  echo -e "No Nvidia GPU detected. Installing AMD GPU modules for system monitoring."
+  sudo pacman -S --noconfirm --needed rocm-smi-lib
+fi
