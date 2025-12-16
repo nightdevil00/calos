@@ -100,7 +100,7 @@ echo
 sleep 2
 echo "Cleaning up installation..."
 sudo rm -rf ~/go/
-rm -rf ~/.local/share/calos/paru/
+#rm -rf ~/.local/share/calos/paru/
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 rm ~/.local/share/calos/bin/calos-tui-install
 cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
