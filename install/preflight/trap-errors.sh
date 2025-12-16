@@ -9,7 +9,8 @@ catch_errors() {
   echo
   echo "welp shit broke"
 
-  echo "You can retry by running: bash ~/.local/share/calos/install.sh"
+  echo "You can retry by running: bash ~/.local/share/calos/install.sh."
+  echo "Feel free to use nano to edit any files you think may not be working."
 }
 
 trap catch_errors ERR
