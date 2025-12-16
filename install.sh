@@ -6,10 +6,11 @@ CALOS_INSTALL=~/.local/share/calos/install
 
 clear
 sleep 1
-echo "Welcome to calOS! The installer will begin by enabling the Chaotic-AUR to help make the install faster and more reliable."
+echo "Welcome to calOS!"
+echo
 sleep 1
-echo "paru will be installed by default. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
-echo "and remove the final two lines. The installer will also enable the multilib repositories by default. This helps with NVIDIA detection."
+echo "Paru will be installed by default alongside the Chaotic-AUR. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
+echo "and remove the final two lines. The installer will also enable the multilib repositories by default. This helps with NVIDIA detection and Steam installation."
 sleep 3
 echo
 echo "Installation starting..."
