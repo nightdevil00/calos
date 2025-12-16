@@ -78,5 +78,5 @@ env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 EOF
   fi
 fi
-else 
-  echo "No Nvidia hardware detected. Install will resume shortly."
+else
+  echo -e "No Nvidia GPU detected."
