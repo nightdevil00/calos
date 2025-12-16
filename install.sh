@@ -57,6 +57,14 @@ source $CALOS_INSTALL/config/hardware/network.sh
 source $CALOS_INSTALL/config/hardware/bluetooth.sh
 source $CALOS_INSTALL/config/hardware/usb-autosuspend.sh
 source $CALOS_INSTALL/config/hardware/ignore-power-button.sh
+clear
+echo "Checking for and installing Nvidia drivers if necessary..."
+sleep 1
+
+source $CALOS_INSTALL/nvidia.sh
+clear 
+echo "Resuming Installation"
+sleep 2
 source $CALOS_INSTALL/limine.sh
 
 sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
@@ -113,5 +121,4 @@ echo
 echo "Installation completed. Reboot to access system."
 echo "Make sure to read through your configuration files to familarize yourself with operations!"
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
-echo
 echo
