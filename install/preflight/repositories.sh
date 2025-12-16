@@ -14,9 +14,9 @@ sudo pacman -U --noconfirm 'https://cdn-mirror.chaotic.cx/chaotic-aur/chaotic-mi
 
 if ! grep -q "chaotic-aur" /etc/pacman.conf; then
   echo -e '\n[chaotic-aur]\nInclude = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf >/dev/null
-fi
-else
+  else
   echo -e "Chaotic-AUR already found in pacman.conf. Resuming install..."
+fi
 
 # Refresh all repos
 sudo pacman -Syu --noconfirm
