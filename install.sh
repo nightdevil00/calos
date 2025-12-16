@@ -8,7 +8,7 @@ clear
 sleep 1
 echo "Welcome to calOS! The installer will begin by enabling the Chaotic-AUR to help make the install faster and more reliable."
 sleep 1
-echo "yay will be installed by default. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
+echo "paru will be installed by default. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
 echo "and remove the final two lines. Don't forget to uncomment multi-lib for Steam support as well!"
 sleep 3
 echo
@@ -18,9 +18,9 @@ source $CALOS_INSTALL/preflight/trap-errors.sh
 source $CALOS_INSTALL/preflight/repositories.sh
 
 sudo pacman -S --needed base-devel
-sudo pacman -S --noconfirm --needed yay
+sudo pacman -S --noconfirm --needed paru
 clear
-echo "Chaotic-AUR and yay have been installed. Now installing core utils."
+echo "Chaotic-AUR and paru have been installed. Now installing core utils."
 sleep 2
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 #git clone https://aur.archlinux.org/paru.git
@@ -32,8 +32,8 @@ sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 #clear
 #cd ~/.local/share/calos
 
-# paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
-yay -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --removemake --cleanafter
+paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
+# yay -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --removemake --cleanafter
 
 clear
 echo "All utils successfully installed."
