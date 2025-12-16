@@ -18,5 +18,9 @@ if ! grep -q "chaotic-aur" /etc/pacman.conf; then
   echo -e "Chaotic-AUR already found in pacman.conf. Resuming install..."
 fi
 
+# Enable multilib for Steam and Nvidia fuckery
+
+sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+
 # Refresh all repos
 sudo pacman -Syu --noconfirm
