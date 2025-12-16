@@ -33,7 +33,8 @@ paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu
 clear
 echo "AUR system packages built and installed successfully! Build files will be cleaned post-installation."
 sleep 2
-echo "Main packages and configuration files next. Resuming install..."
+echo
+echo "Main packages and configuration files will now be installed..."
 sleep 3
 
 source $CALOS_INSTALL/packages.sh
