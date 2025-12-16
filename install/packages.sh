@@ -34,6 +34,7 @@ sudo pacman -S --noconfirm --needed \
   playerctl \
   plocate \
   hyprpolkitagent \
+  ripgrep \
   satty \
   slurp \
   starship \
