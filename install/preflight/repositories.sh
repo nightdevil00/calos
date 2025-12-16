@@ -20,7 +20,7 @@ fi
 
 # Enable multilib for Steam and Nvidia fuckery
 
-sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
+sudo sed -i "/\[multilib\]/,/Include/"'s/^#//' /etc/pacman.conf
 
 # Refresh all repos
 sudo pacman -Syu --noconfirm
