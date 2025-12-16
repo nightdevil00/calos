@@ -62,6 +62,7 @@ echo "By default, snapper services are not configured but calOS allows for full 
 sleep 1
 echo "Refer to limine-snapper-sync in order to complete this setup yourself."
 sleep 1
+echo
 echo "Resuming Installation..."
 sleep 5
 source $CALOS_INSTALL/limine.sh
@@ -76,8 +77,6 @@ sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
-echo
-echo
 echo
 echo "Boot message service added and enabled. This is located in your home directory's .bashrc file. Configure it as needed."
 sleep 5
@@ -94,6 +93,7 @@ sudo systemctl enable greetd.service
 echo
 
 echo "Configuring Walker, Elephant and Waybar as services..."
+sleep 3
 elephant service enable
 systemctl --user enable elephant.service
 systemctl --user start elephant.service
