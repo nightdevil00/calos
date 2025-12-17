@@ -45,16 +45,11 @@ echo
 echo "Main packages and configuration files will now be installed..."
 sleep 3
 source $CALOS_INSTALL/packages.sh
+source $CALOS_INSTALL/lazyvim.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
 calos-tui-install "Dust" "bash -c 'dust -r; read -n 1 -s'" float https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/qdirstat.png
-if [[ ! -d "$HOME/.config/nvim" ]]; then
-  git clone https://github.com/LazyVim/starter ~/.config/nvim
-  cp -R ~/.local/share/calos/config/nvim/* ~/.config/nvim/
-  rm -rf ~/.config/nvim/.git
-  echo "vim.opt.relativenumber = false" >>~/.config/nvim/lua/config/options.lua
-fi
 mkdir -p ~/.local/share/fonts
 fc-cache
 clear
