@@ -59,7 +59,7 @@ clear
 echo "Checking hardware for Nvidia GPU..."
 echo
 sleep 1
-echo "Installer will download/update all required configuration file/packages if found."
+echo "The installer will download/update all required configuration file/packages if found."
 sleep 1
 echo "It is critical that you have multilib repositories enabled. If you are running the installer this is enabled by default."
 echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system monitor integration."
