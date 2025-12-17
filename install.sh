@@ -8,21 +8,20 @@ CALOS_INSTALL=~/.local/share/calos/install
 
 clear
 sleep 1
-echo "Welcome to calOS!"
+echo "Welcome to calOS! A few words:"
 echo
 sleep 1
 echo "Paru will be installed by default alongside the Chaotic-AUR repository. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
-echo "and remove the final two lines. The installer will also enable the multilib repositories by default. This helps with NVIDIA detection and Steam installation."
+echo "and remove the final two lines. The installer will also enable the multilib repositories, this helps with NVIDIA GPU detection and Steam installation."
 sleep 3
 echo
 echo "Installation starting..."
 sleep 5
 
-# Preinstall for error reporting and repository edits
+# Scripts for error reporting and repository edits
 
 source $CALOS_INSTALL/preinstall/errors.sh
 source $CALOS_INSTALL/preinstall/repositories.sh
-
 sudo pacman -S --needed base-devel
 sudo pacman -S --noconfirm --needed paru
 clear
@@ -45,6 +44,7 @@ sleep 3
 echo
 echo "Main packages and configuration files will now be installed..."
 sleep 3
+source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
@@ -57,17 +57,19 @@ if [[ ! -d "$HOME/.config/nvim" ]]; then
 fi
 mkdir -p ~/.local/share/fonts
 fc-cache
+clear
 
 # NVIDIA checks, AMD fixes
 
-clear
 echo "Checking hardware for Nvidia GPU..."
 echo
 sleep 1
-echo "Installer will download/update all required configuration files if found."
+echo "Installer will download/update all required configuration file/packages if found."
 sleep 1
-echo "If an AMD gpu is detected the installation script will instead enable rocm support for system integration."
-sleep 4
+echo "It is critical that you have multilib repositories enabled. If you are running the installer this is enabled by default."
+sleep 1
+echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system integration."
+sleep 6
 source $CALOS_INSTALL/nvidia.sh
 sleep 2
 clear
@@ -98,6 +100,7 @@ sudo cp ~/.local/share/calos/install/motd /etc/motd
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
+echo
 echo "Boot message service added and enabled. This is located in your home directory's .bashrc file. Configure it as needed."
 sleep 5
 clear
@@ -120,9 +123,9 @@ clear
 
 # Installation Cleanup
 
-echo "The installer will now begin removing unncessary files from this directory."
+echo "The installer will now begin removing unnecessary files from this directory."
 sleep 1
-echo "Please keep all remaining files within this directory for system stability."
+echo "Please keep all remaining files within ~/.local/share/calos (present directory) for system stability."
 sleep 2
 echo
 echo "Cleaning up installation..."
@@ -137,7 +140,6 @@ rm -rf ~/.local/share/calos/applications
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
 sudo pacman -Rns maven --noconfirm
-#sudo pacman -Rns rust --noconfirm
 sudo updatedb
 sleep 2
 clear
@@ -148,10 +150,11 @@ rm -rf ~/.local/share/calos/install
 
 echo
 echo
-echo "Installation completed. Reboot to access system."
+echo "Installation completed, reboot to access system. Your username will be remembered by the greeter after your first login."
 echo "Make sure to read through your configuration files to familarize yourself with operations!"
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
 echo
-sleep 1
-echo "It is heavily reccomended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
-echo "By default the refresh rate is 60hz."
+sleep 3
+echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
+echo "By default your resolution should be correct but your refresh rate is locked to 60hz. Refer to the file in question for examples." 
+echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits)."
