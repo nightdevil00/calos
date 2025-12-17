@@ -52,7 +52,8 @@ source $CALOS_INSTALL/packaging/tuis.sh
 source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
-source $CALOS_INSTALL/misc.sh
+
+# NVIDIA checks, AMD fixes
 
 clear
 echo "Checking hardware for Nvidia GPU..."
@@ -62,10 +63,11 @@ echo "Installer will download/update all required configuration files if found."
 sleep 1
 echo "If an AMD gpu is detected the installation script will instead enable rocm support for system integration."
 sleep 4
-
 source $CALOS_INSTALL/nvidia.sh
 sleep 2
 clear
+
+# Limine bootloader setup
 
 echo "Limine bootloader configuration will now be installed."
 sleep 1
@@ -82,6 +84,8 @@ sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
 sleep 2
 clear
 
+# Login and boot message service
+
 echo "Creating login service..."
 sleep 2
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
@@ -93,8 +97,11 @@ echo "Boot message service added and enabled. This is located in your home direc
 sleep 5
 clear
 
+# Systemctl services
+
 echo "Enabling system services for walker, elephant, waybar and applying miscellaneous fixes..."
 sleep 3
+source $CALOS_INSTALL/misc.sh
 xdg-settings set default-web-browser firefox.desktop
 echo
 systemctl --user enable --now hyprpolkitagent.service
