@@ -56,7 +56,7 @@ clear
 
 # NVIDIA checks, AMD fixes
 
-echo "Checking hardware for Nvidia GPU..."
+echo "Checking system for NVIDIA architecture installation..."
 echo
 sleep 1
 echo "The installer will download/update all required configuration file/packages if found."
@@ -86,7 +86,7 @@ clear
 
 # Login and boot message service
 
-echo "Creating login service..."
+echo "Creating login service with boot message support..."
 sleep 2
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
@@ -95,7 +95,7 @@ echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | 
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 echo
 echo
-echo "Boot message service added and enabled. This is located in your home directory's .bashrc file. Configure it as needed."
+echo "Login and boot message services added and enabled. This is located in your home directory's .bashrc file. Configure it as needed."
 sleep 5
 clear
 
@@ -123,7 +123,7 @@ echo "Please keep all remaining files within ~/.local/share/calos (present direc
 sleep 2
 echo
 echo "Cleaning up installation..."
-sleep 5
+sleep 3
 sudo rm -rf ~/go/
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 rm ~/.local/share/calos/bin/calos-tui-install
