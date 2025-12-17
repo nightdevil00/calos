@@ -129,7 +129,6 @@ cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
 cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
 cp ~/.local/share/calos/applications/limine-snapper-restore.desktop ~/.local/share/applications/
 rm -rf ~/.local/share/calos/applications
-rm -rf ~/.local/share/calos/install
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
 sudo pacman -Rns maven --noconfirm
@@ -137,13 +136,17 @@ sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
+cat ~/.local/share/calos/install/logo.txt | tte expand
+rm -rf ~/.local/share/calos/install
 
 # Install Complete
 
-cat ~/.local/share/calos/install/logo.txt | tte expand
 echo
 echo
 echo "Installation completed. Reboot to access system."
 echo "Make sure to read through your configuration files to familarize yourself with operations!"
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
 echo
+sleep 1
+echo "It is heavily reccomended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
+echo "By default the refresh rate is 60hz."
