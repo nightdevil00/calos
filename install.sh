@@ -74,9 +74,8 @@ clear
 echo "Limine bootloader configuration will now be installed."
 sleep 1
 echo "By default, snapper services are not configured but calOS allows for full Snapshot integration with the bootloader."
-sleep 1
 echo "Refer to limine-snapper-sync in order to complete this setup yourself."
-sleep 1
+sleep 3
 echo
 echo "Resuming Installation..."
 sleep 5
@@ -153,3 +152,4 @@ sleep 3
 echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
 echo "By default your resolution should be correct but your refresh rate is locked to 60hz. Refer to the file in question for examples." 
 echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits)."
+echo
