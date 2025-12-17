@@ -69,6 +69,11 @@ source $CALOS_INSTALL/nvidia.sh
 sleep 2
 clear
 
+# Steam Install
+echo "Steam installation script initialized. Please follow the prompts below."
+echo
+source $CALOS_INSTALL/steam.sh
+
 # Limine bootloader setup
 
 echo "Limine bootloader configuration will now be installed."
