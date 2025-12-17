@@ -31,7 +31,7 @@ clear
 echo "Chaotic-AUR repository synced and paru has been installed."
 sleep 3
 echo
-echo "The installer will now begin installing AUR programs required for basic system functionality."
+echo "The installer will now begin installing AUR packages required for basic system functionality."
 sleep 3
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
@@ -39,7 +39,7 @@ clear
 
 # Main packages, configuration and scripts 
 
-echo "AUR system packages built and installed successfully! Build files will be cleaned post-installation."
+echo "AUR system packages built and installed successfully! Build files will be cleansed post-installation."
 sleep 3
 echo
 echo "Main packages and configuration files will now be installed..."
@@ -62,17 +62,11 @@ sleep 1
 echo "Installer will download/update all required configuration file/packages if found."
 sleep 1
 echo "It is critical that you have multilib repositories enabled. If you are running the installer this is enabled by default."
-sleep 1
-echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system integration."
+echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system monitor integration."
 sleep 6
 source $CALOS_INSTALL/nvidia.sh
 sleep 2
 clear
-
-# Steam Install
-echo "Steam installation script initialized. Please follow the prompts below."
-echo
-source $CALOS_INSTALL/steam.sh
 
 # Limine bootloader setup
 
