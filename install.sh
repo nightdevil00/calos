@@ -149,13 +149,17 @@ rm ~/.local/share/calos/README.md
 echo
 echo
 echo "Installation completed, reboot to access system. Your username will be remembered by the greeter after your first login."
+sleep 2
+echo
 echo "Make sure to read through your configuration files to familarize yourself with system operations."
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
 echo
 sleep 3
 echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
 echo "By default your resolution should be correct but your refresh rate is locked to 60hz. Refer to the file in question for examples." 
-echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits) to accomplish this."
+sleep 3
+echo
+echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits)."
 echo "Please launch Neovim (SUPER + N) once logged in to initialize lazyvim scripts. This will only occur on Neovim's first ever launch."
 echo
 sleep 3
