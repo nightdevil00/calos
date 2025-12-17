@@ -150,16 +150,23 @@ rm ~/.local/share/calos/icon.txt
 rm ~/.local/share/calos/logo.txt
 rm ~/.local/share/calos/README.md
 
-# Install Complete
+# Installation Completion and Optional Steam Install
 
 echo
 echo
 echo "Installation completed, reboot to access system. Your username will be remembered by the greeter after your first login."
-echo "Make sure to read through your configuration files to familarize yourself with operations!"
+echo "Make sure to read through your configuration files to familarize yourself with system operations."
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
 echo
 sleep 3
 echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
 echo "By default your resolution should be correct but your refresh rate is locked to 60hz. Refer to the file in question for examples." 
-echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits)."
+echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits) to accomplish this."
 echo
+sleep 3
+echo "Lastly, if you would like to install Steam, please follow the prompts below. All required dependencies/configurations have already been met."
+sleep 2
+echo "System will reboot after the installation. Remember to change your BIOS boot order to prioritize your new OS!"
+sleep 3
+echo
+source ./steam.sh
