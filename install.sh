@@ -31,7 +31,7 @@ clear
 echo "Chaotic-AUR repository synced and paru has been installed."
 sleep 3
 echo
-echo "The installer will now begin installing AUR programs required for system functionality."
+echo "The installer will now begin installing AUR programs required for basic system functionality."
 sleep 3
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
