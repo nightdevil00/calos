@@ -81,8 +81,7 @@ Install git to clone the repository into the specified directory.
 
 Create your directories:
 ```
-mkdir ~/.local
-mkdir ~/.local/share
+mkdir -pv ~/.local/share
 cd ~/.local/share
 ```
 
@@ -100,4 +99,4 @@ Then cd into /calos/ and ./install.sh. Wow crazy.
 
 ## Why Paru?
 
-* Why do you care so much??? Paru is significantly faster than yay as well as allowing you to view package builds in your terminal. Yay is much easier to type out on the terminal, sure, but feature wise paru is just better. Stop being scared of new things and just try it. You shouldn't even be downloading things from the AUR you dirty person.
+* Why do you care so much??? Paru is significantly faster than yay as well as allowing you to view package builds in your terminal. Yay is much easier to type out on the terminal, sure, but feature wise paru is just better. Stop being scared of new things and just try it. You shouldn't even be downloading things from the AUR you dirty person. Actually it broke while writing this but uh it works now I guess.
