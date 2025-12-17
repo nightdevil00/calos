@@ -4,7 +4,7 @@
 
 
 # calOS
-CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of, tailored to desktops (and it also looks really cool). CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (less than 575 packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.** This OS is basically vanilla arch with hyprland + themes. **CalOS is only tested on Arch Linux with an AMD GPU. NVIDIA support is currently being worked on. Maybe it works!!!**
+CalOS is a pre-configured Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of, tailored to desktops (and it also looks really cool). CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (less than 575 packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.** This OS is basically vanilla arch with hyprland + themes. **calOS has been tested to work on both AMD and NVIDIA GPUs. Refer to /install/nvidia.sh for support.**
 
 CalOS is comprised of 3 main 'parts'. The first is Arch+Hyprland, with a hefty amount of intelligent, yet configurable, keybinds/defaults. Walker interacts with your system through launching applications and its extensive dmenu support. A customized Mechabar (waybar) helps monitor your system as well interact with your hyprland configuration. As aforementioned, this is primarily a desktop-friendly configuration. Features such as battery monitoring, lockscreens and power profiles (performance all the way) are not present by default. Feel free to add them if you want, it's your PC after all.
 
@@ -15,7 +15,7 @@ tl;dr its dotfiles baby
 
 ### Who is calOS for?
 
-CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very game-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic.
+CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very gaming-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic.
 
 ## Overview
 
@@ -65,14 +65,15 @@ This is a pretty decent spot to talk about how to interact with the operating sy
 
 ### Defaults
 
-Trying to distance itself from various "opinionated" setups as much as possible, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), cmus (tui music player), paru (it's better than yay stop being a baby and just try it), various tui-based applications (dust, bluetui, imapala), I forgot everything else. 
-* **Open your system settings (SUPER + ESCAPE) and navigate to System -> Packages to see what is installed.** Remove whatever you dislike from there. 
+Trying to distance itself from various "opinionated" setups, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), cmus (tui music player), paru (it's better than yay stop being a baby and just try it), various tui-based applications (dust, bluetui, imapala), and uh I forgot everything else.
+* **Open your system settings (SUPER + ESCAPE) and navigate to System -> Packages to see what is installed.** Remove whatever you dislike from there.
+* There is a prompt at the very end of the install that asks you if you would like to install Steam. As the installer already enables multilib repositories it is recommended to do so (if you want Steam). 
 
 # Installation and Configuration
 
 ## How 2 Install
 
-**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy). **Pipewire must be used.** Pulseaudio is old.
+**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy). **Pipewire must be used.** Why would you use pulseaudio anyways...
 
 ```
 sudo pacman -S git
@@ -90,7 +91,7 @@ From there, clone this repository:
 ```
 git clone https://github.com/criticalart/calos
 ```
-Then cd into /calos/ and ./install.sh. Wow crazy. 
+Then `cd` into /calos/ and run `./install.sh.` Wow crazy. 
 
 ## Post Installation
 
