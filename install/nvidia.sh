@@ -78,6 +78,6 @@ env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 EOF
   fi
 else
-  echo -e "No Nvidia GPU detected. Installing AMD GPU modules for system monitoring."
+  echo -e "No Nvidia GPU detected. Installing AMD GPU modules for system monitoring and btop++ integration."
   sudo pacman -S --noconfirm --needed rocm-smi-lib
 fi
