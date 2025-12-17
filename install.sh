@@ -139,6 +139,10 @@ sleep 2
 clear
 cat ~/.local/share/calos/install/logo.txt | tte expand
 rm -rf ~/.local/share/calos/install
+rm ~/.local/share/calos/blank.txt
+rm ~/.local/share/calos/icon.txt
+rm ~/.local/share/calos/logo.txt
+rm ~/.local/share/calos/README.md
 
 # Install Complete
 
