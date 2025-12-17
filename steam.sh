@@ -14,7 +14,9 @@ esac
 done
 
 sudo pacman --noconfirm --needed -S steam
-clear
-echo "Steam installed. System will not reboot..."
+echo
+echo
+echo
+echo "Steam installed. System will reboot in 5 seconds..."
 sleep 5
 systemctl reboot
