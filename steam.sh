@@ -17,6 +17,7 @@ sudo pacman --noconfirm --needed -S steam
 echo
 echo
 echo
+sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
 echo "Steam installed. System will reboot in 5 seconds..."
 sleep 5
 systemctl reboot
