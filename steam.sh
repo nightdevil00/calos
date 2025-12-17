@@ -15,4 +15,6 @@ done
 
 sudo pacman --noconfirm --needed -S steam
 clear
-echo "Steam installed. System ready for reboot."
+echo "Steam installed. System will not reboot..."
+sleep 5
+systemctl reboot
