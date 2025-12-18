@@ -65,9 +65,10 @@ This is a pretty decent spot to talk about how to interact with the operating sy
 
 ### Defaults
 
-Trying to distance itself from various "opinionated" setups, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), cmus (tui music player), paru (it's better than yay stop being a baby and just try it), various tui-based applications (dust, bluetui, imapala), and uh I forgot everything else.
+Trying to distance itself from various "opinionated" setups, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), Steam (if chosen by the installer), Neovim (with customized lazygit) and Yazi (file manager).
+* calOS utilizes sensible, lightweight defaults, with as little dependencies as possible. These include pqiv (image viewer, full yazi compatability), clipse (clipboard history), zoxide (`cd` upgrade), Pinta (simple image editor), cmus (terminal-based music player) and various TUI applications to manage system settings (bluetui/impala).
 * **Open your system settings (SUPER + ESCAPE) and navigate to System -> Packages to see what is installed.** Remove whatever you dislike from there.
-* There is a prompt at the very end of the install that asks you if you would like to install Steam. As the installer already enables multilib repositories it is recommended to do so (if you want Steam). 
+* There is a prompt at the very end of the install that asks you if you would like to install Steam. As the installer already enables multilib repositories it is recommended to do so (only if you want Steam, of course). 
 
 # Installation and Configuration
 
