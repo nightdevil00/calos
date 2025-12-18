@@ -4,11 +4,15 @@ show_hidden = true
 
 [opener]
 
+imageedit = [
+{ run = 'pinta "$@"', desc = "Pinta Image Editor" }
+]
+
 image = [
-{ run = 'feh "$@"' },
+{ run = 'pqiv -i "$@"', desc = "Pqiv Image Viewer" },
 ]
 text = [
-	{ run = 'nvim "$@"', block = true, desc = "nvim", for = "linux" },
+	{ run = 'nvim "$@"', block = true, desc = "Neovim Text Editor"},
 ]
 
 music = [
@@ -23,9 +27,11 @@ video = [
 
 rules = [
 
-{ name = "*.jpg", use = "image" },
+{ name = "*.gif", use = "image" },
 
-{ name = "*.png", use = "image" },
+{ name = "*.jpg", use =  [ "image", "imageedit" ] },
+
+{ name = "*.png", use =  [ "image", "imageedit" ] },
 
 { name = "*.conf", use = "text" },
 
