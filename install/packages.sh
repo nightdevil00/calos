@@ -35,7 +35,6 @@ sudo pacman -S --noconfirm --needed \
   pqiv \
   hyprpolkitagent \
   ripgrep \
-  satty \
   slurp \
   starship \
   swaybg \
