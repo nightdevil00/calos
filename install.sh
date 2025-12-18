@@ -31,7 +31,8 @@ clear
 echo "Chaotic-AUR repository synced and paru has been installed."
 sleep 3
 echo
-echo "The installer will now begin installing AUR packages required for basic system functionality."
+echo "The installer will now begin downloading and building AUR packages required for basic system functionality."
+echo "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
 sleep 3
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
@@ -167,6 +168,7 @@ sleep 3
 echo "Lastly, if you would like to install Steam, please follow the prompts below. All required dependencies/configurations have already been met."
 sleep 2
 echo "System will reboot after the installation. Remember to change your BIOS boot order to prioritize your new OS!"
+rm ~/.local/share/calos/install.sh
 sleep 3
 echo
 source ./steam.sh
