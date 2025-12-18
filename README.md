@@ -3,7 +3,7 @@
 </p>
 
 
-# calOS
+# calOS Hyprland Starter
 CalOS is a pre-configured, desktop-friendly, Arch+Hyprland setup that strives to be both feature-rich, yet minimalist; a blank template that the user can build on top of (and it also looks really cool). CalOS started as a fork of Omarchy when it first released, using the theme engine it shipped with alongside Walker's dmenu. Since then Omarchy has grown more and more bloated, while CalOS has done the opposite (less than 575 packages on a complete install)! **Note: This is only for experienced Arch Linux users. You must do all system maintenence on your own.** This OS is basically vanilla Arch Linux with Hyprland + themes. **calOS (and its installer) has been tested on both AMD (9070XT) and NVIDIA (3070) hardware. It should work on your system; if not, create an issue. Refer to /install/nvidia.sh for support.**
 
 CalOS is comprised of 3 main 'parts'. The first is Arch+Hyprland, with a hefty amount of intelligent, yet configurable, keybinds/defaults. Walker interacts with your system through launching applications and its extensive dmenu support. A customized Mechabar (waybar) helps monitor your system as well interact with your hyprland configuration. As aforementioned, this is primarily a desktop-friendly configuration. Features such as battery monitoring, lockscreens and power profiles (performance all the way) are not present by default. Feel free to add them if you want, it's your PC after all.
@@ -15,7 +15,7 @@ tl;dr its dotfiles baby
 
 ### Who is calOS for?
 
-CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very gaming-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic.
+CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very gaming-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic. **This is essentially a starter kit for your foray into Hyprland.**
 
 ## Overview
 
