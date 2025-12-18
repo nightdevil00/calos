@@ -1,13 +1,13 @@
 #!/bin/bash
 
-# Disable shutting system down on power button to bind it to power menu afterwards
+# Allows computer powerbutton to be bound to system menu
 sudo sed -i 's/.*HandlePowerKey=.*/HandlePowerKey=ignore/' /etc/systemd/logind.conf
 
-# Increase lockout limit to 10 and decrease timeout to 2 minutes
+# Lockout limit increase, no fat fingers for you
 sudo sed -i 's|^\(auth\s\+required\s\+pam_faillock.so\)\s\+preauth.*$|\1 preauth silent deny=10 unlock_time=120|' "/etc/pam.d/system-auth"
 sudo sed -i 's|^\(auth\s\+\[default=die\]\s\+pam_faillock.so\)\s\+authfail.*$|\1 authfail deny=10 unlock_time=120|' "/etc/pam.d/system-auth"
 
-# Give the user 10 instead of 3 tries to fat finger their password before lockout
+# more sudo tries
 echo "Defaults passwd_tries=10" | sudo tee /etc/sudoers.d/passwd-tries
 sudo chmod 440 /etc/sudoers.d/passwd-tries
 
