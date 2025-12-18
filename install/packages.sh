@@ -11,7 +11,6 @@ sudo pacman -S --noconfirm --needed \
   fortune-mod \
   fastfetch \
   fd \
-  feh\
   firefox \
   fzf \
   greetd \
@@ -33,6 +32,7 @@ sudo pacman -S --noconfirm --needed \
   pamixer \
   playerctl \
   plocate \
+  pqiv \
   hyprpolkitagent \
   ripgrep \
   satty \
