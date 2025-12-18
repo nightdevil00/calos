@@ -17,7 +17,7 @@ clear
 echo "Steam will now be installed. If prompted to select your driver, make sure to specify vulkan-radeon."
 sleep 3
 echo "Installing..."
-sudo pacman --noconfirm --needed -S steam
+sudo pacman --needed -S steam
 echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
 echo "Steam installed. System will reboot in 5 seconds..."
