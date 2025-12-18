@@ -9,11 +9,3 @@ if [[ ! -d "$OUTPUT_DIR" ]]; then
 fi
 
 hyprshot -m region --freeze
-
-# pkill slurp || hyprshot -m ${1:-region} --raw --freeze |
-#  satty --filename - \
-#    --output-filename "$OUTPUT_DIR/screenshot-$(date +'%Y-%m-%d_%H-%M-%S').png" \
-#    --early-exit \
-#    --actions-on-enter save-to-clipboard \
-#    --save-after-copy \
-#    --copy-command 'wl-copy'
