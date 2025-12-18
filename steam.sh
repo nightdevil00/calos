@@ -15,10 +15,13 @@ done
 sleep 1
 clear
 echo "Steam will now be installed. If prompted to select your drivers reccomendations are as follows:"
+echo
 sleep 1
 echo "For AMD GPUs, please use vulkan-radeon."
-sleep 1
-echo "NVIDIA GPUs should have proper drivers installed already from the earlier script. If not, use nvidia-utils."
+echo
+sleep 2
+echo "NVIDIA GPUs should already have proper driver support from this installer. If you are prompted to select"
+echo "one regardless, use nvidia-utils."
 sleep 5
 echo "Installing..."
 sudo pacman --needed -S steam
