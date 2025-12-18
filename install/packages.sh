@@ -30,6 +30,7 @@ sudo pacman -S --noconfirm --needed \
   noto-fonts-extra \
   nvim \
   pamixer \
+  pinta \
   playerctl \
   plocate \
   pqiv \
