@@ -33,7 +33,7 @@ sleep 3
 echo
 echo "The installer will now begin downloading and building AUR packages required for basic system functionality."
 echo "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
-sleep 3
+sleep 6
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor gpu-screen-recorder elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
 clear
