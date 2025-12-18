@@ -28,5 +28,6 @@ sudo pacman --needed -S steam
 echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
 echo "Steam installed. System will reboot to BIOS in 5 seconds..."
+rm -rf ~/.local/share/calos/steam.sh
 sleep 5
 systemctl reboot --firmware-setup
