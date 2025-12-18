@@ -1,4 +1,4 @@
-source ~/.local/share/calos/default/bash/rc
+source ~/.local/share/calos/bash/rc
 
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
