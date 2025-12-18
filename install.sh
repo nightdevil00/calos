@@ -8,7 +8,7 @@ CALOS_INSTALL=~/.local/share/calos/install
 
 clear
 sleep 1
-echo "Welcome to calOS! A few words:"
+echo "Welcome to calOS! This script will turn your base Arch Linux install into a minimal, yet functional, Hyprland setup. Consider it a starter layout to build your own OS on."
 echo
 sleep 1
 echo "Paru will be installed by default alongside the Chaotic-AUR repository. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
