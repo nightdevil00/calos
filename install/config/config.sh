@@ -5,4 +5,4 @@ mkdir -p ~/.config
 cp -R ~/.local/share/calos/config/* ~/.config/
 
 # Use custom .bashrc
-mv ~/.local/share/calos/bashrc ~/.bashrc
+mv ~/.local/share/calos/install/bashrc ~/.bashrc
