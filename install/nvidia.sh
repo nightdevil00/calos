@@ -5,6 +5,7 @@
 # for use with Hyprland on Arch Linux, following the official Hyprland wiki.
 #
 # Author: https://github.com/Kn0ax
+# Minor additions by criticalart for AMD architecture
 #
 # ==============================================================================
 
