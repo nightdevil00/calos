@@ -172,10 +172,10 @@ prioritize_entries() {
     if (match(line, /File manager/))  prio = 2
     if (match(line, /Launch apps/))  prio = 8
     if (match(line, /Calos System Menu/))  prio = 4
-    if (match(line, /Launch Applications/))  prio = 5
+    if (match(line, /Launch Applications/))  prio = 3
     if (match(line, /Theme Menu/))  prio = 10
     if (match(line, /Clipboard History/))  prio = 7
-    if (match(line, /Neovim/))  prio = 3
+    if (match(line, /Neovim/))  prio = 5
     if (match(line, /Power Menu/))  prio = 9
     if (match(line, /Close Active Window/))  prio = 6
     if (match(line, /System Monitor/))  prio = 11
