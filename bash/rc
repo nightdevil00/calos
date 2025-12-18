@@ -2,5 +2,5 @@ source ~/.local/share/calos/bash/shell
 source ~/.local/share/calos/bash/aliases
 source ~/.local/share/calos/bash/prompt
 source ~/.local/share/calos/bash/init
-source ~/.local/share/calos/bash/envs
+source ~/.local/share/calos/bash/env
 [[ $- == *i* ]] && bind -f ~/.local/share/calos/bash/inputrc
