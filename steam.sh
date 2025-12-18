@@ -12,7 +12,11 @@ case $yn in
 esac
 
 done
-
+sleep 1
+clear
+echo "Steam will now be installed. If prompted to select your driver, make sure to specify vulkan-radeon."
+sleep 3
+echo "Installing..."
 sudo pacman --noconfirm --needed -S steam
 echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
