@@ -15,14 +15,14 @@ tl;dr its dotfiles baby
 
 ### Who is calOS for?
 
-CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very gaming-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at it's base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic. **This is essentially a starter kit for your foray into Hyprland.**
+CalOS is directed to primarily desktop users who have some familiarity with Arch Linux and wanted to try their hand at Hyprland. It ships with defaults that are already very gaming-friendly (Steam especially) with a high amount of configurability. Productivity is not the main goal, functionality is. If you use your desktop PC as a glorified web browser, gaming machine or social outlet, calOS is for you. You can always add on whatever else you like, but at its base default configuration, calOS is simply a really nice Hyprland skin designed to be as bare as possible so you can add your own magic. **This is essentially a starter kit for your foray into Hyprland.**
 
 ## Overview
 
 ### System
 
 * A custom hyprland.conf file with numerous keybinds and configurations.
-  - Most keybinds should just "make sense" such as Super + B launching your Browser. For a full list refer to the keybindings.conf file in ~/.config/hypr. Important ones include:
+  - Most keybinds should just *make sense*, such as Super + B launching your Browser. For a full list refer to the keybindings.conf file in ~/.config/hypr, or use `SUPER + K` to bring up a custom dmenu showcasing all keybindings currently active. Important bindings are:
   - Super + Escape to bring up your Walker dmenu for system features (toggle system settings, power menu, app launcher).
   - Super + Space shows your application launcher.
   - Super + Enter for your terminal (Alacritty).
@@ -65,7 +65,7 @@ This is a pretty decent spot to talk about how to interact with the operating sy
 
 ### Defaults
 
-Trying to distance itself from various "opinionated" setups, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), Steam (if chosen by the installer), Neovim (with customized lazygit) and Yazi (file manager).
+Trying to distance itself from various *opinionated* setups, calOS ships with as few defaults as possible. These include: Firefox (web browser), Alacritty (terminal), Steam (if chosen by the installer), Neovim (with customized lazygit) and Yazi (file manager).
 * calOS utilizes sensible, lightweight defaults, with as little dependencies as possible. These include pqiv (image viewer, full yazi compatability), clipse (clipboard history), zoxide (`cd` upgrade), Pinta (simple image editor), cmus (terminal-based music player) and various TUI applications to manage system settings (bluetui/impala).
 * **Open your system settings (SUPER + ESCAPE) and navigate to System -> Packages to see what is installed.** Remove whatever you dislike from there.
 * There is a prompt at the very end of the install that asks you if you would like to install Steam. As the installer already enables multilib repositories it is recommended to do so (only if you want Steam, of course). 
