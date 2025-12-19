@@ -53,7 +53,7 @@ Regardless of how you feel about Omarchy, most of us can agree that it does look
 <p align="center">
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/9bb5831b-fa81-4821-8e5d-cc677223b05d" />
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/c8bfc813-db35-4c2b-9a94-0640b45ea1ee" />
-<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/4e4d9984-0f26-4ff5-aa0b-96ee965ea14b" />
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/91ae4ce4-5fd5-4673-a531-f0a35b998fb9" />
 </p>
 
 This is a pretty decent spot to talk about how to interact with the operating system as a whole.
