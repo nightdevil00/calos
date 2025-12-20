@@ -52,7 +52,7 @@ Regardless of how you feel about Omarchy, most of us can agree that it does look
 
 <p align="center">
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/9bb5831b-fa81-4821-8e5d-cc677223b05d" />
-<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/c8bfc813-db35-4c2b-9a94-0640b45ea1ee" />
+<img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/b996788c-5c43-4ae9-bfcf-8b79878e60f2" />
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/36209a31-c465-4309-b622-0611046fcfd4" />
 </p>
 
