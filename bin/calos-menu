@@ -56,7 +56,7 @@ show_style_menu() {
 }
 
 show_theme_menu() {
-  walker -H -N -m menus:calosthemes --minwidth 200 --minheight 400 -p "Select a Theme"
+    walker -H -N -n -m menus:calosthemes --minwidth 200 --minheight 400
 }
 
 show_font_menu() {
