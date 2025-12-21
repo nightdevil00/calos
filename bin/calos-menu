@@ -41,8 +41,8 @@ terminal() {
 }
 
 edit_in_nvim() {
-  notify-send "Editing configuration file in Neovim" "$1"
-  $TERMINAL -e nvim "$1"
+  notify-send "Editing fastfetch logo configuration in Neovim." "$1"
+  $TERMINAL --class Calos -e nvim "$1"
 }
 
 show_style_menu() {
