@@ -138,7 +138,7 @@ sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
-cat ~/.local/share/calos/install/logo.txt | tte expand
+cat ~/.local/share/calos/install/logo-complete.txt | tte expand
 rm -rf ~/.local/share/calos/install
 rm ~/.local/share/calos/blank.txt
 rm ~/.local/share/calos/icon.txt
