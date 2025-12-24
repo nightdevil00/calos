@@ -11,8 +11,13 @@ imageedit = [
 image = [
 { run = 'pqiv -i "$@"', desc = "Pqiv Image Viewer" },
 ]
+
 text = [
 	{ run = 'nvim "$@"', block = true, desc = "Neovim Text Editor"},
+]
+
+extract = [
+ {  run = '7z e "$@"',  desc = "Extract with 7zip" }
 ]
 
 music = [
@@ -26,6 +31,12 @@ video = [
 [open]
 
 rules = [
+
+{ name = "*.zip", use = "extract" },
+
+{ name = "*.rar", use = "extract" },
+
+{ name = "*.7z", use = "extract" },
 
 { name = "*.gif", use = "image" },
 
@@ -54,6 +65,8 @@ rules = [
 { name = "*.css", use = "text" },
 
 { name = "*.js", use = "text" },
+
+{ name = "*.bash*", use = "text" },
 
 { name = "*.mp3", use = "music"},
 
