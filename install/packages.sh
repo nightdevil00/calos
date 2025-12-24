@@ -44,7 +44,6 @@ sudo pacman -S --noconfirm --needed \
   tree-sitter-cli \
   ttf-cascadia-mono-nerd \
   ttf-font-awesome \
-  unzip \
   uwsm \
   waybar \
   wiremix \
@@ -54,4 +53,5 @@ sudo pacman -S --noconfirm --needed \
   xdg-desktop-portal-gtk \
   xdg-desktop-portal-hyprland \
   yazi \
+  7zip \
   zoxide
