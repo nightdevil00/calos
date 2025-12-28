@@ -17,7 +17,7 @@ text = [
 ]
 
 extract = [
- {  run = '7z e "$@"',  desc = "Extract with 7zip" }
+ {  run = '7z x "$@" -o*',  desc = "Extract with 7zip" }
 ]
 
 music = [
