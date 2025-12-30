@@ -64,7 +64,7 @@ echo "The installer will download/update all required configuration file/package
 sleep 1
 echo "It is critical that you have multilib repositories enabled. If you are running the installer this is enabled by default."
 echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system monitor integration."
-sleep 6
+sleep 7
 source $CALOS_INSTALL/nvidia.sh
 sleep 2
 clear
@@ -140,9 +140,6 @@ sleep 2
 clear
 cat ~/.local/share/calos/install/logo-complete.txt | tte expand
 rm -rf ~/.local/share/calos/install
-rm ~/.local/share/calos/blank.txt
-rm ~/.local/share/calos/icon.txt
-rm ~/.local/share/calos/logo.txt
 rm ~/.local/share/calos/README.md
 
 # Installation Completion and Optional Steam Install
