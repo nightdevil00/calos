@@ -39,7 +39,7 @@ sudo pacman -S --noconfirm --needed \
   ripgrep \
   slurp \
   starship \
-  swww \
+  swaybg \
   swayosd \
   tldr \
   tree-sitter-cli \
