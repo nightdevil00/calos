@@ -9,7 +9,7 @@ imageedit = [
 ]
 
 image = [
-{ run = 'pqiv -i "$@"', desc = "Pqiv Image Viewer" },
+{ run = 'pqiv -i --scale-mode-screen-fraction=0.33 "$@"', desc = "Pqiv Image Viewer" },
 ]
 
 text = [
