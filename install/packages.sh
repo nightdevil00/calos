@@ -33,6 +33,7 @@ sudo pacman -S --noconfirm --needed \
   pinta \
   playerctl \
   plocate \
+  gpu-screen-recorder-git \
   pqiv \
   hyprpolkitagent \
   ripgrep \
