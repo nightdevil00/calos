@@ -1,0 +1,6 @@
+[[mgr.prepend_keymap]]
+on = "n"
+run = "create"
+[[mgr.prepend_keymap]]
+on  = "<C-h>"
+run = "hidden toggle"
