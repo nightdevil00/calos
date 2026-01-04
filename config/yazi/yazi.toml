@@ -32,50 +32,50 @@ video = [
 
 rules = [
 
-{ name = "*.zip", use = "extract" },
+{ url = "*.zip", use = "extract" },
 
-{ name = "*.rar", use = "extract" },
+{ url = "*.rar", use = "extract" },
 
-{ name = "*.7z", use = "extract" },
+{ url = "*.7z", use = "extract" },
 
-{ name = "*.gif", use = "image" },
+{ url = "*.gif", use = "image" },
 
-{ name = "*.jpg", use =  [ "image", "imageedit" ] },
+{ url = "*.jpg", use =  [ "image", "imageedit" ] },
 
-{ name = "*.png", use =  [ "image", "imageedit" ] },
+{ url = "*.png", use =  [ "image", "imageedit" ] },
 
-{ name = "*.conf", use = "text" },
+{ url = "*.conf", use = "text" },
 
-{ name = "*.toml", use = "text" },
+{ url = "*.toml", use = "text" },
 
-{ name = "*.txt", use = "text" },
+{ url = "*.txt", use = "text" },
 
-{ name = "*.ini", use = "text" },
+{ url = "*.ini", use = "text" },
 
-{ name = "*.jsonc", use = "text" },
+{ url = "*.jsonc", use = "text" },
 
-{ name = "*.yml", use = "text" },
+{ url = "*.yml", use = "text" },
 
-{ name = "*.json", use = "text" },
+{ url = "*.json", use = "text" },
 
-{ name = "*.lua", use = "text" },
+{ url = "*.lua", use = "text" },
 
-{ name = "*.md", use = "text" },
+{ url = "*.md", use = "text" },
 
-{ name = "*.css", use = "text" },
+{ url = "*.css", use = "text" },
 
-{ name = "*.js", use = "text" },
+{ url = "*.js", use = "text" },
 
-{ name = "*.bash*", use = "text" },
+{ url = "*.bash*", use = "text" },
 
-{ name = "*.mp3", use = "music"},
+{ url = "*.mp3", use = "music"},
 
-{ name = "*.wav", use = "music"},
+{ url = "*.wav", use = "music"},
 
-{ name = "*.ogg", use = "music"},
+{ url = "*.ogg", use = "music"},
 
-{ name = "*.mkv", use = "video"},
+{ url = "*.mkv", use = "video"},
 
-{ name = "*.mp4", use = "video"}
+{ url = "*.mp4", use = "video"}
 
 ]
