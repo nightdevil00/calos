@@ -9,4 +9,5 @@ notify-send "SUPER + ESCAPE will bring up your system menu." -t 5000
 sleep 5
 notify-send "Please select a default theme." "This can be changed at any time by using the system menu or SUPER + CTRL + T." -t 5000
 systemctl --user enable waybar.service
+rm ~/.local/share/calos/bin/firststart
 exec walker -H -N -n -m menus:calosthemes --minwidth 300 --height 600
