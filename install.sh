@@ -22,7 +22,7 @@ sleep 5
 
 source $CALOS_INSTALL/preinstall/errors.sh
 source $CALOS_INSTALL/preinstall/repositories.sh
-sudo pacman -S --needed base-devel
+sudo pacman -S --noconfirm --needed base-devel
 sudo pacman -S --noconfirm --needed paru
 clear
 
@@ -138,7 +138,7 @@ sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
-cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 120 middleout
+cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 60 middleout
 rm -rf ~/.local/share/calos/install
 rm ~/.local/share/calos/README.md
 
