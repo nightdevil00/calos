@@ -95,9 +95,9 @@ show_screenrecord_menu() {
 }
 
 show_toggle_menu() {
-  case $(menu "Toggle" "󰔎  Nightlight\n󰍜  Top Bar") in
-  *Nightlight*) calos-toggle-nightlight ;;
-  *Bar*) calos-toggle-waybar ;;
+  case $(menu "Toggle" "󰔎  Hyprsunset\n󰍜  Waybar") in
+  *Hyprsunset*) calos-toggle-nightlight ;;
+  *Waybar*) calos-toggle-waybar ;;
   *) show_main_menu ;;
   esac
 }
@@ -126,7 +126,7 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  go_to_menu "$(menu "Settings" "󰀻  Apps\n󰸌  Style\n  Capture\n󰔎  Toggle\n  Restart\n  System")"
+  go_to_menu "$(menu "Settings" "󰀻  Apps\n󰸌  Style\n  Capture\n󰨙  Toggle\n  Restart\n  System")"
 }
 
 go_to_menu() {
