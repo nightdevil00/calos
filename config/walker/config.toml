@@ -8,6 +8,8 @@ theme = "calos-default"                                                   # them
 disable_mouse = false                                                       # disable mouse (on input and list only)
 debug = false
 additional_theme_location = "~/.config/walker/themes/"
+hide_quick_activation = false
+app_launch_prefix = "uwsm app -- "
 
 [shell]
 anchor_top = true
