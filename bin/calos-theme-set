@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# omarchy-theme-set: Set a theme, specified by its name.
-# Usage: omarchy-theme-set <theme-name>
-
 if [[ -z "$1" && "$1" != "CNCLD" ]]; then
   echo "Usage: calos-theme-set <theme-name>" >&2
   exit 1
@@ -39,12 +36,11 @@ else
   gsettings set org.gnome.desktop.interface icon-theme "Yaru-blue"
 fi
 
+# Change background with theme
+calos-theme-bg-next
+
 # Trigger alacritty config reload
 touch "$HOME/.config/alacritty/alacritty.toml"
-
-# Trigger ghostty config reload
-# systemctl reload --user app-com.mitchellh.ghostty.service
-# killall -SIGUSR2 ghostty
 
 # Restart components to apply new theme
 pkill -SIGUSR2 btop
@@ -53,6 +49,3 @@ calos-restart-waybar
 calos-restart-swayosd
 makoctl reload
 hyprctl reload
-
-# Set new background
-calos-theme-bg-next
