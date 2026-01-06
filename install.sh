@@ -127,6 +127,7 @@ echo "Cleaning up installation..."
 sleep 3
 sudo rm -rf ~/go/
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
+chmod +x ~/.local/share/calos/bin/calos-list-keybindings
 rm ~/.local/share/calos/bin/calos-tui-install
 cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
 cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
@@ -138,7 +139,7 @@ sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
-cat ~/.local/share/calos/install/logo-complete.txt | tte expand
+cat ~/.local/share/calos/install/logo-complete.txt | tte tte --xterm-colors --frame-rate 120 middleout
 rm -rf ~/.local/share/calos/install
 rm ~/.local/share/calos/README.md
 
