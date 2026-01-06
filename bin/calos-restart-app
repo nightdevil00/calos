@@ -1,4 +1,5 @@
 #!/bin/bash
 
 pkill -x $1
+sleep .25
 setsid uwsm app -s b -t service -- $1 >/dev/null 2>&1 &
