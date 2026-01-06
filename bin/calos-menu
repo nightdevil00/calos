@@ -126,7 +126,7 @@ show_system_menu() {
 }
 
 show_main_menu() {
-  go_to_menu "$(menu "Settings" "󰀻  Apps\n󰸌  Style\n  Capture\n󰨙  Toggle\n  Restart\n  System")"
+  go_to_menu "$(menu "Settings" "󰀻  Apps\n  Style\n  Capture\n󰨙  Toggle\n  Restart\n  System")"
 }
 
 go_to_menu() {
