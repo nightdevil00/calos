@@ -17,7 +17,7 @@ clear
 echo "Steam will now be installed. If prompted to select your drivers reccomendations are as follows:"
 echo
 sleep 3
-echo "For AMD GPUs, please use vulkan-radeon."
+echo "For AMD GPUs, please use vulkan-radeon. For the second prompt, if asked, use lib32-vulkan-radeon."
 echo
 sleep 2
 echo "NVIDIA GPUs should already have proper driver support from this installer. If you are prompted to select"
