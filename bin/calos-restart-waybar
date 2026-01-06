@@ -1,4 +1,8 @@
 #!/bin/bash
 
-pkill -x waybar
-systemctl --user start waybar.service
+if pgrep -x waybar >/dev/null; then
+  pkill -x waybar
+  systemctl --user start waybar.service >/dev/null 2>&1 &
+else
+  systemctl --user start waybar.service >/dev/null 2>&1 &
+fi
