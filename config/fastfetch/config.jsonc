@@ -7,7 +7,10 @@
       "top": 1,
       "right": 1,
       "left": 1
-    }
+    },
+        "color": {
+        "1": "blue",
+        }
   },
   "modules": [
     "break",
@@ -16,9 +19,10 @@
       "format": "\u001b[90m┌─────────────Hardware──────────────────────┐"
     },
     {
-      "type": "host",
+      "type": "command",
       "key": " PC",
-      "keyColor": "green"
+      "keyColor": "green",
+      "text": "echo AUROS X870 STEALTH ICE"
     },
     {
       "type": "cpu",
@@ -27,9 +31,9 @@
       "keyColor": "green"
     },
     {
-      "type": "gpu",
+      "type": "command",
       "key": "│ ├",
-      "detectionMethod": "pci",
+      "text": "echo AMD Sapphire Nitro+ 9070XT",
       "keyColor": "green"
     },
     {
@@ -44,7 +48,7 @@
     },
     {
       "type": "memory",
-      "key": "│ ├",
+      "key": "│ └",
       "keyColor": "green"
     },
 //    {
@@ -105,7 +109,7 @@
     },
     {
       "type": "command",
-      "key": "└ └",
+      "key": "│ └",
       "keyColor": "blue",
       "text": "font=$(calos-font-current); echo -e $font"
     },
@@ -116,7 +120,7 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌───────────Uptime / Age────────────────────┐"
+      "format": "\u001b[90m┌────────────Uptime / Age────────────────────┐"
     },
     {
       "type": "command",
