@@ -56,7 +56,7 @@ show_style_menu() {
 }
 
 show_theme_menu() {
-    walker -H -N -n -m menus:calosthemes --minwidth 200 --minheight 400
+  walker -H -N -n -m menus:calosthemes --minwidth 200 --minheight 400
 }
 
 show_font_menu() {
@@ -114,10 +114,12 @@ show_update_process_menu() {
 }
 
 show_system_menu() {
-  case $(menu "System" "  Packages\n󱄄  Screensaver\n󰜉  Restart\n󰐥  Shutdown") in
+  case $(menu "System" "  Packages\n󱄄  Screensaver\n󰜉  Restart\n󰗽  Reboot to BIOS\n󰐥  Shutdown") in
   *Packages*) alacritty --class Calos -e calos-pkg-list ;;
   *Screensaver*) calos-launch-screensaver force ;;
   *Restart*) systemctl reboot ;;
+  *BIOS*) systemctl reboot --firmware-setup ;;
+    # *Logoff*) systemctl --user start wayland-session-shutdown.target ;;
   *Shutdown*) systemctl poweroff ;;
   *) show_main_menu ;;
   esac
