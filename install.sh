@@ -150,7 +150,6 @@ sleep 2
 echo
 echo "Make sure to read through your configuration files to familarize yourself with system operations."
 echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
-echo "To bring up all keybindings to review, use SUPER + K once you have logged into the system."
 echo
 sleep 3
 echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
