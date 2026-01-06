@@ -1,3 +1,4 @@
 #!/bin/bash
 
-calos-restart-app waybar
+pkill -x waybar
+systemctl --user start waybar.service
