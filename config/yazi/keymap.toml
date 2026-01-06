@@ -4,3 +4,6 @@ run = "create"
 [[mgr.prepend_keymap]]
 on  = "<C-h>"
 run = "hidden toggle"
+[[mgr.prepend_keymap]]
+on  = "o"
+run = "open --interactive"
