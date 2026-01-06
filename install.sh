@@ -139,7 +139,7 @@ sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
-cat ~/.local/share/calos/install/logo-complete.txt | tte tte --xterm-colors --frame-rate 120 middleout
+cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 120 middleout
 rm -rf ~/.local/share/calos/install
 rm ~/.local/share/calos/README.md
 
