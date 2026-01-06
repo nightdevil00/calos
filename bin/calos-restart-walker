@@ -1,5 +1,4 @@
 #!/bin/bash
 
 pkill walker
-
-uwsm app -- walker --gapplication-service &
+uwsm app -t service -- walker --gapplication-service &
