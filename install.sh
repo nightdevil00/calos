@@ -113,7 +113,6 @@ sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
 elephant service enable
 systemctl --user enable --now elephant.service
-systemctl --user enable waybar.service
 clear
 
 # Installation Cleanup
