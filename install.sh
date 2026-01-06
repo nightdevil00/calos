@@ -130,7 +130,6 @@ chmod +x ~/.local/share/calos/bin/calos-list-keybindings
 rm ~/.local/share/calos/bin/calos-tui-install
 cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
 cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
-cp ~/.local/share/calos/applications/limine-snapper-restore.desktop ~/.local/share/applications/
 rm -rf ~/.local/share/calos/applications
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
