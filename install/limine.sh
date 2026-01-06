@@ -1,15 +1,14 @@
 #!/bin/bash
 
 # Check for alternative limine configuration files and if found, remove them
-sudo rm /boot/EFI/limine/limine.conf
 
-if test -e /boot/limine/limine.conf; then
+if test -f /boot/limine/limine.conf; then
 sudo rm /boot/limine/limine.conf
 else
 echo "Configuration file not found, checking alternative locations..."
 fi
 
-if test -e /boot/EFI/limine/limine.conf; then
+if test -f /boot/EFI/limine/limine.conf; then
 sudo rm /boot/EFI/limine/limine.conf
 else
 echo "No alternative limine configurations found, resuming install..."
