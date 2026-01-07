@@ -95,9 +95,10 @@ show_screenrecord_menu() {
 }
 
 show_toggle_menu() {
-  case $(menu "Toggle" "󰔎  Hyprsunset\n󰍜  Waybar") in
+  case $(menu "Toggle" "󰔎  Hyprsunset\n󰍜  Waybar\n󱥂  Notifications") in
   *Hyprsunset*) calos-toggle-nightlight ;;
   *Waybar*) calos-toggle-waybar ;;
+  *Notifications*) makoctl mode -t do-not-disturb && makoctl mode | grep -q 'do-not-disturb' && notify-send "Silenced notifications" || notify-send "Enabled notifications" ;;
   *) show_main_menu ;;
   esac
 }
