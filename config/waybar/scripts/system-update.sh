@@ -40,7 +40,7 @@ update-packages() {
 
     notify-send 'Update Complete' -i 'package-install'
 
-    printf '\n%bUpdate Complete!%b\n' "$GRN" "$RST"
+    printf '\n%bUpdate Complete!%b\n' "$GRN" "$RST" | tte --frame-rate 120 beams
     read -rs -n 1 -p 'Press any key to exit...'
   fi
 }
@@ -62,7 +62,7 @@ main() {
   local action=$1
   case $action in
   start)
-    printf '%bChecking for updates...%b' "$BLU" "$RST"
+    printf '%bChecking for updates...%b' "$BLU" "$RST" | tte print
     check-updates
     update-packages
     ;;
