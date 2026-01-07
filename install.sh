@@ -80,7 +80,6 @@ echo
 echo "Resuming Installation..."
 sleep 5
 source $CALOS_INSTALL/limine.sh
-sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
 sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
 sleep 2
 clear
