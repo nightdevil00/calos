@@ -132,7 +132,6 @@ cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
 rm -rf ~/.local/share/calos/applications
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
-sudo pacman -Rns maven --noconfirm
 sudo updatedb
 sleep 2
 clear
