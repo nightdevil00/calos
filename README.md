@@ -48,7 +48,7 @@ CalOS is directed to primarily desktop users who have some familiarity with Arch
 
 ### Style
 
-Regardless of how you feel about Omarchy, most of us can agree that it does look pretty. CalOS builds off of the themes of Omarchy and extends them into multiple facets of the operating system. Many, many, many (autistic) hours were spent tweaking each theme CalOS ships with to compliment the entire OS. Your waybar, audio visualizer, terminal and system monitoring tools will all change based on the theme you're feeling. This took so long you son of a bitch you better use this feature.
+Regardless of how you feel about Omarchy, most of us can agree that it does look pretty. CalOS builds off of those themes and extends them into multiple facets of the operating system. Many, many, many (autistic) hours were spent tweaking each theme CalOS ships with to compliment the entire OS. Your waybar, audio visualizer, terminal and system monitoring tools will all change based on the theme you're feeling. This took so long you son of a bitch you better use this feature
 
 <p align="center">
 <img width="3440" height="1440" alt="image" src="https://github.com/user-attachments/assets/9bb5831b-fa81-4821-8e5d-cc677223b05d" />
@@ -74,7 +74,7 @@ Trying to distance itself from various *opinionated* setups, calOS ships with as
 
 ## How 2 Install
 
-**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system. The only required settings for the install script to work properly is to **use Limine as your default bootloader** and **set root and create a user** (which you should be doing anyway, you dummy). **Pipewire must be used.** Why would you use pulseaudio anyways...
+**You must have a fresh Arch install going into this.** Feel free to use any settings you want; from disk encryption to file system type. **Limine is heavily encouraged to be used as your bootloader as the installer enables extra features if it detects it.** Other bootloaders will function just fine, however. The only required settings are a **user with root** (which you should be using anyway, you dummy) and **pipewire to be installed**. 
 
 ```
 sudo pacman -S git
