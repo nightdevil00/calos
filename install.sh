@@ -71,10 +71,10 @@ clear
 
 # Limine bootloader setup
 
-echo "Limine bootloader configuration will now be installed."
+echo "The installer will now check which bootloader you have installed."
 sleep 1
-echo "By default, snapper services are not configured but calOS allows for full Snapshot integration with the bootloader."
-echo "Refer to limine-snapper-sync in order to complete this setup yourself."
+echo "The default recommended bootloader is Limine, however the installer supports other bootloaders."
+echo "If Limine is detected the installer will enable various useful features, such as automated mkinitcpio and boot priority."
 sleep 3
 echo
 echo "Resuming Installation..."
