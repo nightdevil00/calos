@@ -31,6 +31,8 @@ EOF
 
   # Finalize bootloader setup
 
+  echo "Limine detected! Proceeding with feature install."
+  sleep 1
   sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
   paru -S --noconfirm --needed limine-mkinitcpio-hook --skipreview
   sudo limine-update
