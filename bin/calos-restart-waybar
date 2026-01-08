@@ -1,9 +1,7 @@
 #!/bin/bash
 
 if pgrep -x waybar >/dev/null; then
-  pkill -x waybar
-  sleep .25
-  systemctl --user start waybar.service >/dev/null 2>&1 &
+  systemctl --user restart waybar.service >/dev/null 2>&1 &
 else
   systemctl --user start waybar.service >/dev/null 2>&1 &
 fi
