@@ -2,7 +2,7 @@
 
 # Default temperature values
 ON_TEMP=4000
-OFF_TEMP=6000
+OFF_TEMP=6600
 
 # Ensure hyprsunset is running
 if ! pgrep -x hyprsunset; then
@@ -13,7 +13,7 @@ fi
 # Query the current temperature
 CURRENT_TEMP=$(hyprctl hyprsunset temperature 2>/dev/null | grep -oE '[0-9]+')
 
-if [[ "$CURRENT_TEMP" == "$OFF_TEMP" ]]; then
+if [ "$CURRENT_TEMP" == "$OFF_TEMP" -o "$CURRENT_TEMP" == "6000" ]; then
   hyprctl hyprsunset temperature $ON_TEMP
   notify-send "  Bluelight Filter Enabled"
 else
