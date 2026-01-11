@@ -1,4 +1,10 @@
-source ~/.local/share/calos/bash/rc
+source ~/.local/share/calos/default/bash/rc
+
+# set up fzf key bindings and fuzzy completion
+
+eval "$(fzf --bash)"
+
+# yazi key functionality improvement
 
 function y() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -8,20 +14,30 @@ function y() {
   rm -f -- "$tmp"
 }
 
+# terminal upgrades
+
 bind 'set show-all-if-ambiguous on'
 bind 'TAB:menu-complete'
+mkcd() { mkdir "$1" && cd "$1"; }
 
+# aliases
+
+alias oops='sudo $(history -p !!)'
 alias la='eza --icons=auto -a'
 alias ls='eza --icons=auto'
 alias grep='grep --color=auto'
-alias dota='steam steam://rungameid/570/'
 alias please='sudo'
 alias cat='bat --style grid,header,header-filename,header-filesize '
 alias update='sudo pacman -Syu'
 alias upgrade='sudo pacman -Syu'
 alias svim='sudoedit '
+alias packages='calos-pkg-list'
+# alias weather='curl wttr.in/[ADD_CITY_HERE]?format=3'
+
+# first terminal boot service
 
 if ! systemctl is-active --quiet bootmsg; then
+  sleep 2
   fastfetch
   echo
   echo "Welcome to $HOSTNAME! Running initial startup scripts and daemon diagnostics:"
@@ -29,6 +45,7 @@ if ! systemctl is-active --quiet bootmsg; then
   systemctl --failed
   echo
   sudo systemctl start bootmsg.service
+  echo
   echo "Todays quote is:"
   fortune
   echo
@@ -36,7 +53,6 @@ if ! systemctl is-active --quiet bootmsg; then
   echo
 fi
 
-# Set up fzf key bindings and fuzzy completion
-eval "$(fzf --bash)"
+# starship config
 
 export STARSHIP_CONFIG=~/.config/starship.toml
