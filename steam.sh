@@ -7,4 +7,5 @@ gum spin -s line --title="Installing Steam..." -- sleep 2
 sudo pacman --needed -S steam
 echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
+clear
 rm -rf ~/.local/share/calos/steam.sh
