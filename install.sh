@@ -81,14 +81,6 @@ sudo cp ~/.local/share/calos/install/issue /etc/issue
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 source $CALOS_INSTALL/misc.sh
-xdg-settings set default-web-browser firefox.desktop
-echo
-systemctl --user enable --now hyprpolkitagent.service
-sudo chmod 666 /dev/uinput
-sudo pacman -Rdd greetd-agreety --noconfirm
-sudo systemctl enable greetd.service
-elephant service enable
-systemctl --user enable --now elephant.service
 clear
 
 # AUR helper
@@ -106,20 +98,8 @@ gum style --border normal --border-foreground 212 --padding="1 3" "The installer
 sleep 3
 echo
 gum spin -s line --title="Cleaning up installation..." -- sleep 4
-chmod +x ~/.local/share/calos/bin/calos-pkg-list
-chmod +x ~/.local/share/calos/bin/calos-list-keybindings
-rm ~/.local/share/calos/bin/calos-tui-install
-cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
-cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
-rm -rf ~/.local/share/calos/applications
-rm -rf ~/.local/share/calos/config
-rm -rf ~/.local/share/calos/.git
-sudo updatedb
-clear
-cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 60 middleout
-echo
-rm -rf ~/.local/share/calos/install
-rm ~/.local/share/calos/README.md
+source $CALOS_INSTALL/cleanup.sh
+gum spin -s line --title="Finalizing install..." -- sleep 2
 
 # Installation Completion and Optional Steam Install
 
@@ -127,7 +107,9 @@ gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style -
 sleep 8
 echo
 echo
-gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam installation script..." -- sleep 4 && source ./steam.sh || echo "Steam will not be installed."
+gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam script..." -- sleep 4 && source ./steam.sh || echo "Steam will not be installed."
 echo
 echo
+rm ~/.local/share/calos/steam.sh
+rm ~/.local/share/calos/install.sh
 gum confirm "Would you like to reboot to BIOS?" && systemctl reboot --firmware-setup
