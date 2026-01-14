@@ -9,4 +9,3 @@ echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
 gum spin -s line --title=""Steam installed. System will reboot to BIOS in 5 seconds..."" -- sleep 5
 rm -rf ~/.local/share/calos/steam.sh
-systemctl reboot --firmware-setup
