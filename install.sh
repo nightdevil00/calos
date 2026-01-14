@@ -120,7 +120,7 @@ rm ~/.local/share/calos/README.md
 
 # Installation Completion and Optional Steam Install
 
-gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete'), reboot to access system. Your username will be remembered by the greeter after your first login." "Make sure to read through your configuration files to familarize yourself with system operations., especially those in $(gum style --italic '~/.config/hypr')." "It is heavily recommended to configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." "Lastly, if you would like to install Steam, please follow the prompts below. All required dependencies/configurations have already been met."
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete'), reboot to access system. Your username will be remembered by the greeter after your first login." "Make sure to read through your configuration files to familarize yourself with system operations., especially those in $(gum style --italic '~/.config/hypr')." "It is heavily recommended to configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." "Lastly, if you would like to install Steam, please follow the prompts below. Multilib repositories have already been enabled."
 sleep 8
 echo
 echo
