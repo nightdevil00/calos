@@ -5,46 +5,34 @@
 # for use with Hyprland on Arch Linux, following the official Hyprland wiki.
 #
 # Author: https://github.com/Kn0ax
-# Minor additions by criticalart for AMD architecture
 #
 # ==============================================================================
 
-# --- GPU Detection ---
-if [ -n "$(lspci | grep -i 'nvidia')" ]; then
-  # --- Driver Selection ---
-  # Turing (16xx, 20xx), Ampere (30xx), Ada (40xx), and newer recommend the open-source kernel modules
-  if echo "$(lspci | grep -i 'nvidia')" | grep -q -E "RTX [2-9][0-9]|GTX 16"; then
-    NVIDIA_DRIVER_PACKAGE="nvidia-open-dkms"
-  else
-    NVIDIA_DRIVER_PACKAGE="nvidia-dkms"
-  fi
+#!/bin/bash
 
+gum spin -s line --title="NVIDIA selected! Installing dependencies..."-- sleep 3
+
+# Check for NVIDIA hardware anyway because implaying people are smart
+NVIDIA="$(lspci | grep -i 'nvidia')"
+
+if [ -n "$NVIDIA" ]; then
   # Check which kernel is installed and set appropriate headers package
-  KERNEL_HEADERS="linux-headers" # Default
-  if pacman -Q linux-zen &>/dev/null; then
-    KERNEL_HEADERS="linux-zen-headers"
-  elif pacman -Q linux-lts &>/dev/null; then
-    KERNEL_HEADERS="linux-lts-headers"
-  elif pacman -Q linux-hardened &>/dev/null; then
-    KERNEL_HEADERS="linux-hardened-headers"
+  KERNEL_HEADERS="$(pacman -Qqs '^linux(-zen|-lts|-hardened)?$' | head -1)-headers"
+
+  if echo "$NVIDIA" | grep -qE "RTX [2-9][0-9]|GTX 16"; then
+    # Turing (16xx, 20xx), Ampere (30xx), Ada (40xx), and newer recommend the open-source kernel modules
+    PACKAGES=(nvidia-open-dkms nvidia-utils lib32-nvidia-utils libva-nvidia-driver)
+  elif echo "$NVIDIA" | grep -qE "GTX 9|GTX 10|Quadro P"; then
+    # Pascal (10xx or Quadro Pxxx) and Maxwell (9xx) use legacy branch that can only be installed from AUR
+    PACKAGES=(nvidia-580xx-dkms nvidia-580xx-utils lib32-nvidia-580xx-utils)
+  fi
+  # Bail if no supported GPU
+  if [ -z "${PACKAGES+x}" ]; then
+    echo " Sorry! No compatible driver for your NVIDIA GPU. See: https://wiki.archlinux.org/title/NVIDIA"
+    exit 0
   fi
 
-  # force package database refresh
-  sudo pacman -Syu --noconfirm
-
-  # Install packages
-  PACKAGES_TO_INSTALL=(
-    "${KERNEL_HEADERS}"
-    "${NVIDIA_DRIVER_PACKAGE}"
-    "nvidia-utils"
-    "lib32-nvidia-utils"
-    "egl-wayland"
-    "libva-nvidia-driver" # For VA-API hardware acceleration
-    "qt5-wayland"
-    "qt6-wayland"
-  )
-
-  sudo pacman -S --needed --noconfirm "${PACKAGES_TO_INSTALL[@]}"
+  sudo pacman -S --noconfirm --needed "$KERNEL_HEADERS" "${PACKAGES[@]}"
 
   # Configure modprobe for early KMS
   echo "options nvidia_drm modeset=1" | sudo tee /etc/modprobe.d/nvidia.conf >/dev/null
@@ -78,7 +66,4 @@ env = LIBVA_DRIVER_NAME,nvidia
 env = __GLX_VENDOR_LIBRARY_NAME,nvidia
 EOF
   fi
-else
-  echo -e "No Nvidia GPU detected. Installing AMD GPU modules for system monitoring and btop++ integration."
-  sudo pacman -S --noconfirm --needed rocm-smi-lib
 fi
