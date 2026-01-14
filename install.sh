@@ -1,22 +1,14 @@
 #!/bin/bash
-set -eE
-
-export PATH="$HOME/.local/share/calos/bin:$PATH"
-CALOS_INSTALL=~/.local/share/calos/install
 
 # Install Initialization
 
+sudo pacman -S --noconfirm --needed gum
+
 clear
-sleep 1
-echo "Welcome to calOS! This script will turn your base Arch Linux install into a minimal, yet functional, Hyprland setup. Consider it a starter layout to build your own OS on."
+gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" "This script will turn your base Arch Linux install into a minimal, yet functional, Hyprland setup." "The installer will install/enable Chaotic-AUR as well as paru to function as your AUR helper." "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
-sleep 1
-echo "Paru will be installed by default alongside the Chaotic-AUR repository. If you would like to remove Chaotic-AUR after the installation, proceed to /etc/pacman.conf"
-echo "and remove the final two lines. The installer will also enable the multilib repositories, this helps with NVIDIA GPU detection and Steam installation."
-sleep 3
-echo
-echo "Installation starting..."
-sleep 5
+sleep 6
+gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 4 || exit 1
 
 # Scripts for error reporting and repository edits
 
@@ -28,23 +20,20 @@ clear
 
 # System critical AUR packages
 
-echo "Chaotic-AUR repository synced and paru has been installed."
-sleep 3
+gum style --border normal --border-foreground 212 --padding="1 3" "Chaotic-AUR repository synced and paru has been installed." "The installer will now begin downloading and building AUR packages required for basic system functionality." "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
+sleep 5
 echo
-echo "The installer will now begin downloading and building AUR packages required for basic system functionality."
-echo "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
-sleep 6
+gum spin -s line --title="Resuming install..." -- sleep 4
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
 paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
 clear
 
-# Main packages, configuration and scripts 
+# Main packages, configuration and scripts
 
-echo "AUR system packages built and installed successfully! Build files will be cleansed post-installation."
-sleep 3
+gum style --border normal --border-foreground 212 --padding="1 3" "AUR system packages built and installed successfully! Build files will be cleansed post-installation." "The installer will now download/install all required packages and link required configuration files."
 echo
-echo "Main packages and configuration files will now be installed..."
-sleep 3
+sleep 4
+gum spin -s line --title="Resuming install..." -- sleep 4
 source $CALOS_INSTALL/packages.sh
 source $CALOS_INSTALL/lazyvim.sh
 source $CALOS_INSTALL/config/config.sh
@@ -57,52 +46,35 @@ clear
 
 # NVIDIA checks, AMD fixes
 
-echo "Checking system for NVIDIA architecture installation..."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." "If an AMD is selected the installer will install and enable rocm support for complete sytem monitor integration." "Choosing NVIDIA will run the NVIDIA installation script, which will then scan your hardware and download required dependencies/headers."
 echo
-sleep 1
-echo "The installer will download/update all required configuration file/packages if found."
-sleep 1
-echo "It is critical that you have multilib repositories enabled. If you are running the installer this is enabled by default."
-echo "If an AMD gpu is detected the installation script will instead enable rocm support for full system monitor integration."
-sleep 7
-source $CALOS_INSTALL/nvidia.sh
 sleep 2
+GPU=$(gum choose --item.foreground 250 "AMD" "NVIDIA")
+[[ "$GPU" == "AMD" ]] && gum spin -s line --title="AMD selected! Installing dependencies..." -- sleep 3 && sudo pacman -S --noconfirm --needed rocm-smi-lib || source $CALOS_INSTALL/nvidia.sh
 clear
 
 # Limine bootloader setup
 
-echo "The installer will now check which bootloader you have installed."
-sleep 1
-echo "The default recommended bootloader is Limine, however the installer supports other bootloaders."
-echo "If Limine is detected the installer will enable various useful features, such as automated mkinitcpio and boot priority."
-sleep 3
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now check which bootloader you have installed." "The default recommended bootloader is Limine, however, other bootloaders are fully supported." "If Limine is detected the installer will enable various features, such as automated mkinitcpio/dual-booting."
+sleep 6
 echo
-echo "Resuming Installation..."
-sleep 5
+gum spin -s line --title="Resuming install..." -- sleep 4
 source $CALOS_INSTALL/limine.sh
 sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
-sleep 2
 clear
 
-# Login and boot message service
 
-echo "Creating login service with boot message support..."
-sleep 2
+# Miscellaneous scripting
+
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now apply various miscellaneous fixes/scripts to your architecture." "These include a custom login/boot script, systemctl services and enhancing system functionality."
+sleep 4
+echo
+gum spin -s line --title="Resuming install..." -- sleep 4
 sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
 sudo cp ~/.local/share/calos/install/motd /etc/motd
 sudo cp ~/.local/share/calos/install/issue /etc/issue
 echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
 sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
-echo
-echo
-echo "Login and boot message services added and enabled. This is located in your home directory's .bashrc file. Configure it as needed."
-sleep 5
-clear
-
-# Systemctl services
-
-echo "Enabling system services for walker, elephant, waybar and applying miscellaneous fixes..."
-sleep 3
 source $CALOS_INSTALL/misc.sh
 xdg-settings set default-web-browser firefox.desktop
 echo
@@ -114,16 +86,20 @@ elephant service enable
 systemctl --user enable --now elephant.service
 clear
 
+# AUR helper
+
+gum style --border normal --border-foreground 212 --padding="1 3" "Please specify which AUR helper you would like to utilize on your system." "By default the installer ships with and utilizes Paru." "Paru is relatively faster than yay with built-in PKGBUILD viewing in terminal." "If you would still like to switch back to yay, please specify below."
+echo
+sleep 4
+HELPER=$(gum choose --item.foreground 250 "Paru" "yay")
+[[ "$HELPER" == "yay" ]] && gum spin -s line --title="paru will now be replaced with yay..." -- sleep 3 && sudo pacman -S --noconfirm --needed yay && sudo pacman -Rns paru --noconfirm || gum spin -s line --title="paru will remain as your AUR helper. Resuming install..." -- sleep 4
+
 # Installation Cleanup
 
-echo "The installer will now begin removing unnecessary files from this directory."
-sleep 1
-echo "Please keep all remaining files within ~/.local/share/calos (present directory) for system stability."
-sleep 2
-echo
-echo "Cleaning up installation..."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now begin removing unnecessary files created during install." "Please keep all remaining files in $(gum style --foreground 212 '~/.local/share/calos') for system stability."
 sleep 3
-sudo rm -rf ~/go/
+echo
+gum spin -s line --title="Cleaning up installation..." -- sleep 4
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 chmod +x ~/.local/share/calos/bin/calos-list-keybindings
 rm ~/.local/share/calos/bin/calos-tui-install
@@ -133,7 +109,6 @@ rm -rf ~/.local/share/calos/applications
 rm -rf ~/.local/share/calos/config
 rm -rf ~/.local/share/calos/.git
 sudo updatedb
-sleep 2
 clear
 cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 60 middleout
 rm -rf ~/.local/share/calos/install
@@ -141,27 +116,12 @@ rm ~/.local/share/calos/README.md
 
 # Installation Completion and Optional Steam Install
 
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete'), reboot to access system. Your username will be remembered by the greeter after your first login." "Make sure to read through your configuration files to familarize yourself with system operations., especially those in $(gum style --italic '~/.config/hypr')." "It is heavily recommended to configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." "Lastly, if you would like to install Steam, please follow the prompts below. All required dependencies/configurations have already been met."
+sleep 8
 echo
 echo
-echo "Installation completed, reboot to access system. Your username will be remembered by the greeter after your first login."
+gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam installation script..." -- sleep 4 && source ./steam.sh || echo "Steam will not be installed."
+echo
+echo
 sleep 2
-echo
-echo "Make sure to read through your configuration files to familarize yourself with system operations."
-echo "Please check the configuration files under ~/.config/hypr especially. This is how you interact with your system."
-echo
-sleep 3
-echo "It is heavily recommended to configure your ~/.config/hypr/monitors.conf file in order to set a proper resolution and refresh rate."
-echo "By default your resolution should be correct but your refresh rate is locked to 60hz. Refer to the file in question for examples." 
-sleep 3
-echo
-echo "Your OS comes with a pre-installed neovim/lazyvim configuration that can be called using 'n' or 'svim' (for sudo edits)."
-echo "Please launch Neovim (SUPER + N) once logged in to initialize lazyvim scripts. This will only occur on Neovim's first ever launch."
-echo
-sleep 3
-echo "Lastly, if you would like to install Steam, please follow the prompts below. All required dependencies/configurations have already been met."
-sleep 2
-echo "System will reboot after the installation. Remember to change your BIOS boot order to prioritize your new OS!"
-rm ~/.local/share/calos/install.sh
-sleep 3
-echo
-source ./steam.sh
+gum confirm "Would you like to reboot to BIOS?" && systemctl reboot --firmware-setup
