@@ -1,33 +1,12 @@
 #!/bin/bash
 
-while true; do
-
-read -p "Would you like to install Steam (y/n) " yn
-case $yn in
-  [yY] ) echo "Initializing Steam installer...";
-    break;;
-  [nN] ) echo "Steam will not be installed. Please reboot system. To access bios directly, type: systemctl reboot --firmware-setup in the terminal.";
-    exit;;
-  * ) echo "Invalid response. Please specify (y/n)";;
-esac
-
-done
-sleep 1
-clear
-echo "Steam will now be installed. If prompted to select your drivers reccomendations are as follows:"
+gum style --border normal --border-foreground 212 --padding="1 3" "Steam will now be installed. If prompted to select your drivers reccomendations are as follows." "For AMD GPUs, please use vulkan-radeon. For the second prompt, if asked, use lib32-vulkan-radeon." "NVIDIA GPUs should already have proper driver support from this installer."
 echo
-sleep 3
-echo "For AMD GPUs, please use vulkan-radeon. For the second prompt, if asked, use lib32-vulkan-radeon."
-echo
-sleep 2
-echo "NVIDIA GPUs should already have proper driver support from this installer. If you are prompted to select"
-echo "one regardless, use nvidia-utils."
-sleep 5
-echo "Installing..."
+sleep 8
+gum spin -s line --title="Install Steam..." -- sleep 2
 sudo pacman --needed -S steam
 echo
 sed -i "/exec-once/"'s/^#//' ~/.config/hypr/autostart.conf
-echo "Steam installed. System will reboot to BIOS in 5 seconds..."
+gum spin -s line --title=""Steam installed. System will reboot to BIOS in 5 seconds..."" -- sleep 5
 rm -rf ~/.local/share/calos/steam.sh
-sleep 5
 systemctl reboot --firmware-setup
