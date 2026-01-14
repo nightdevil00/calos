@@ -9,7 +9,7 @@ CALOS_INSTALL=~/.local/share/calos/install
 sudo pacman -S --noconfirm --needed gum
 
 clear
-gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a minimal, yet functional, Hyprland setup." "The installer will install/enable Chaotic-AUR as well as paru to function as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
+gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable Chaotic-AUR as well as Paru to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
 sleep 6
 gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 2 || exit 1
@@ -30,7 +30,7 @@ sleep 5
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
-paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor elephant elephant-desktopapplications elephant-menus elephant-calc walker-bin --skipreview --removemake --cleanafter
+paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
 clear
 
 # Main packages, configuration and scripts
@@ -51,7 +51,7 @@ clear
 
 # NVIDIA checks, AMD fixes
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." "If AMD is selected the installer will download and enable rocm support for complete monitor integration." "Choosing NVIDIA will download required dependencies/headers as well as update hyprland configurations."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." " " "If AMD is selected the installer will download and enable rocm-smi support for system monitor integration." "Choosing NVIDIA will download required dependencies/headers as well as update hyprland configurations."
 echo
 sleep 2
 GPU=$(gum choose --item.foreground 250 "AMD" "NVIDIA")
@@ -71,7 +71,7 @@ clear
 
 # Miscellaneous scripting
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now apply various miscellaneous fixes/scripts to your architecture." "These include a custom login/boot script, systemctl services and enhancing system functionality."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now apply miscellaneous fixes/scripts to your architecture." "These include custom login/boot scripts, systemctl services and enhancing system functionality."
 sleep 4
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
