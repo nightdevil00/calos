@@ -10,7 +10,7 @@
 
 #!/bin/bash
 
-gum spin -s line --title="NVIDIA selected! Installing dependencies..."-- sleep 3
+gum spin -s line --title="NVIDIA selected! Installing dependencies..." -- sleep 3
 
 # Check for NVIDIA hardware anyway because implaying people are smart
 NVIDIA="$(lspci | grep -i 'nvidia')"
