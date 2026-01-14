@@ -9,7 +9,7 @@ CALOS_INSTALL=~/.local/share/calos/install
 sudo pacman -S --noconfirm --needed gum
 
 clear
-gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable Chaotic-AUR as well as Paru to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
+gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable $(gum style --italic 'Chaotic-AUR') as well as $(gum style --italic 'Paru') to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
 sleep 6
 gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 2 || exit 1
@@ -51,7 +51,7 @@ clear
 
 # NVIDIA checks, AMD fixes
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." " " "If AMD is selected the installer will download and enable rocm-smi support for system monitor integration." "Choosing NVIDIA will download required dependencies/headers as well as update hyprland configurations."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." " " "If $(gum style --bold --foreground 212 'AMD') is selected the installer will download and enable rocm-smi support for system monitor integration." "Choosing $(gum style --bold --foreground 212 'NVIDIA') will download required dependencies/headers as well as update hyprland configurations."
 echo
 sleep 2
 GPU=$(gum choose --item.foreground 250 "AMD" "NVIDIA")
@@ -60,7 +60,7 @@ clear
 
 # Limine bootloader setup
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now check which bootloader you have installed." "The default recommended bootloader is Limine, but calOS will function on any." " " "If Limine is detected the installer will enable various features, such as automated mkinitcpio/dual-booting/ricing."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now check which bootloader you have installed." "The default recommended bootloader is $(gum style --bold --foreground 212 'Limine'), but calOS will function on any." " " "If Limine is detected the installer will enable various features, such as automated mkinitcpio/dual-booting/ricing."
 sleep 6
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
@@ -93,7 +93,7 @@ clear
 
 # AUR helper
 
-gum style --border normal --border-foreground 212 --padding="1 3" "Please specify which AUR helper you would like to utilize on your system." " " "By default the installer ships with and utilizes Paru." "Paru is relatively faster than yay with built-in PKGBUILD viewing in terminal." " " "If you would like to switch back to yay, please specify below."
+gum style --border normal --border-foreground 212 --padding="1 3" "Please specify which AUR helper you would like to utilize on your system." " " "By default the installer ships with and utilizes $(gum style --bold --foreground 212 'Paru')." "Paru is relatively faster than yay with built-in PKGBUILD viewing in terminal." " " "If you would like to switch back to yay, please specify below."
 echo
 sleep 4
 HELPER=$(gum choose --item.foreground 250 "Paru" "yay")
@@ -102,7 +102,7 @@ clear
 
 # Installation Cleanup
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now begin removing unnecessary files created during install." "Please keep all remaining files in $(gum style --foreground 212 '~/.local/share/calos') for system stability."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now begin removing unnecessary files created during install." "Please keep all remaining files in $(gum style --italic '~/.local/share/calos') for system stability."
 sleep 3
 echo
 gum spin -s line --title="Cleaning up installation..." -- sleep 4
