@@ -4,7 +4,7 @@
 
 if [ -n "$(find /boot | grep -i 'limine')" ]; then
 
-  # Check for alternative limine configuration files and if found, remove them
+  # Check for alternative limine configuration files and if found, remove them for limine-mkinitcpio functionality
 
   if test -f /boot/limine/limine.conf; then
     sudo rm /boot/limine/limine.conf
@@ -15,7 +15,7 @@ if [ -n "$(find /boot | grep -i 'limine')" ]; then
   if test -f /boot/EFI/limine/limine.conf; then
     sudo rm /boot/EFI/limine/limine.conf
   else
-    echo "No alternative limine configurations found, resuming install..."
+    echo "No alternative Limine configurations found, resuming install..."
   fi
 
   # Set default limine.conf location for limine-mkinitcpio-hook to properly function
@@ -31,8 +31,9 @@ EOF
 
   # Finalize bootloader setup
 
+  echo
   echo "Limine detected! Proceeding with feature install."
-  sleep 1
+  sleep 2
   sudo cp ~/.local/share/calos/install/boot.jpg /boot/boot.jpg
   paru -S --noconfirm --needed limine-mkinitcpio-hook --skipreview
   sudo limine-update
