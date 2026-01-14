@@ -31,9 +31,9 @@
       "keyColor": "green"
     },
     {
-      "type": "command",
+      "type": "gpu",
       "key": "│ ├",
-      "text": "echo AMD Sapphire Nitro+ 9070XT",
+      "detectionMethod": "pci",
       "keyColor": "green"
     },
     {
