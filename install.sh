@@ -1,4 +1,8 @@
 #!/bin/bash
+set -eE
+
+export PATH="$HOME/.local/share/calos/bin:$PATH"
+CALOS_INSTALL=~/.local/share/calos/install
 
 # Install Initialization
 
@@ -8,7 +12,7 @@ clear
 gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" "This script will turn your base Arch Linux install into a minimal, yet functional, Hyprland setup." "The installer will install/enable Chaotic-AUR as well as paru to function as your AUR helper." "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
 sleep 6
-gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 4 || exit 1
+gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 2 || exit 1
 
 # Scripts for error reporting and repository edits
 
@@ -25,7 +29,7 @@ sleep 5
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
-paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor elephant elephant-desktopapplications elephant-menus elephant-calc walker --skipreview --removemake --cleanafter
+paru -S --noconfirm --needed python-terminaltexteffects rose-pine-hyprcursor elephant elephant-desktopapplications elephant-menus elephant-calc walker-bin --skipreview --removemake --cleanafter
 clear
 
 # Main packages, configuration and scripts
