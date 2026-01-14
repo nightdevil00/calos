@@ -25,8 +25,8 @@ clear
 
 # System critical AUR packages
 
-gum style --border normal --border-foreground 212 --padding="1 3" "Chaotic-AUR repository synced and paru has been installed." " " "The installer will now begin downloading and building AUR packages required for basic system functionality." "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
-sleep 5
+gum style --border normal --border-foreground 212 --padding="1 3" "Chaotic-AUR repository added to $(gum style --italic '/etc/pacman.conf') and Paru has been installed." " " "The installer will now begin downloading and building AUR packages required for basic system functionality." "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
+sleep 6
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
 sudo pacman -S --noconfirm --needed yaru-icon-theme clipse
@@ -60,7 +60,7 @@ clear
 
 # Limine bootloader setup
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now check which bootloader you have installed." "The default recommended bootloader is Limine, but calOS will function on any." " " "If Limine is detected the installer will enable various features, such as automated mkinitcpio/dual-booting."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now check which bootloader you have installed." "The default recommended bootloader is Limine, but calOS will function on any." " " "If Limine is detected the installer will enable various features, such as automated mkinitcpio/dual-booting/ricing."
 sleep 6
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
@@ -71,7 +71,7 @@ clear
 
 # Miscellaneous scripting
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now apply miscellaneous fixes/scripts to your architecture." "These include custom login/boot scripts, systemctl services and enhancing system functionality."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now apply miscellaneous fixes/scripts to your architecture." "These include custom login/boot scripts, systemctl configs and enhancing system functionality."
 sleep 4
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
@@ -97,7 +97,7 @@ gum style --border normal --border-foreground 212 --padding="1 3" "Please specif
 echo
 sleep 4
 HELPER=$(gum choose --item.foreground 250 "Paru" "yay")
-[[ "$HELPER" == "yay" ]] && gum spin -s line --title="paru will now be replaced with yay..." -- sleep 3 && sudo pacman -S --noconfirm --needed yay && sudo pacman -Rns paru --noconfirm || gum spin -s line --title="Paru will remain your AUR helper. Resuming install..." -- sleep 4
+[[ "$HELPER" == "yay" ]] && gum spin -s line --title="Paru will now be replaced with yay..." -- sleep 3 && sudo pacman -S --noconfirm --needed yay && sudo pacman -Rns paru --noconfirm || gum spin -s line --title="Paru will remain your AUR helper. Resuming install..." -- sleep 3
 clear
 
 # Installation Cleanup
@@ -123,7 +123,7 @@ rm ~/.local/share/calos/README.md
 
 # Installation Completion and Optional Steam Install
 
-gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete!') Reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "The default editor is Neovim, which can be launched with $(gum style --italic 'SUPER + N')." "Please open Neovim once to initialize lazyvim scripts, this will only occur on first launch." " " "Lastly, if you would like to install Steam, follow the prompts below. Multilib repositories have already been enabled."
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete!') Reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "The default editor is Neovim, which can be launched with $(gum style --italic 'SUPER + N')." "Please open Neovim once to initialize lazyvim scripts, this will only occur on the first launch." " " "Lastly, if you would like to install Steam, follow the prompts below. Multilib repositories have already been enabled." "Installing Steam from this script will automatically set proper autostart/uwsm configurations as well."
 sleep 8
 echo
 echo
