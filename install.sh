@@ -9,7 +9,7 @@ CALOS_INSTALL=~/.local/share/calos/install
 sudo pacman -S --noconfirm --needed gum
 
 clear
-gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable $(gum style --italic 'Chaotic-AUR') as well as $(gum style --italic 'Paru') to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
+gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable $(gum style --foreground 212 'Chaotic-AUR') as well as $(gum style --italic 'Paru') to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
 sleep 6
 gum confirm "Proceed with Install?" && gum spin -s line --title="Installation starting..." -- sleep 2 || exit 1
@@ -25,7 +25,7 @@ clear
 
 # System critical AUR packages
 
-gum style --border normal --border-foreground 212 --padding="1 3" "Chaotic-AUR repository added to $(gum style --italic '/etc/pacman.conf') and Paru has been installed." " " "The installer will now begin downloading and building AUR packages required for basic system functionality." "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --foreground 212 'Chaotic-AUR') repository added to $(gum style --italic '/etc/pacman.conf') and Paru has been installed." " " "The installer will now begin downloading and building AUR packages required for basic system functionality." "This is the most time-consuming portion of the install. Time spent will vary based on your hardware."
 sleep 6
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
@@ -93,7 +93,7 @@ clear
 
 # AUR helper
 
-gum style --border normal --border-foreground 212 --padding="1 3" "Please specify which AUR helper you would like to utilize on your system." " " "By default the installer ships with and utilizes $(gum style --bold --foreground 212 'Paru')." "Paru is relatively faster than yay with built-in PKGBUILD viewing in terminal." " " "If you would like to switch back to yay, please specify below."
+gum style --border normal --border-foreground 212 --padding="1 3" "Please specify which $(gum style --italic 'AUR Helper') you would like to utilize on your system." " " "By default the installer ships with and utilizes $(gum style --bold --foreground 212 'Paru')." "Paru is relatively faster than $(gum style --bold --foreground 212 'yay') with built-in PKGBUILD viewing in terminal." " " "If you would like to switch back to yay, please specify below."
 echo
 sleep 4
 HELPER=$(gum choose --item.foreground 250 "Paru" "yay")
