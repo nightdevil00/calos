@@ -51,7 +51,7 @@ clear
 
 # NVIDIA checks, AMD fixes
 
-gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." "If AMD is selected the installer will download and enable rocm support for complete sytem monitor integration." "Choosing NVIDIA will download required dependencies/headers as well as update hyprland configurations."
+gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now prompt you to select your GPU architecture." "If AMD is selected the installer will download and enable rocm support for complete monitor integration." "Choosing NVIDIA will download required dependencies/headers as well as update hyprland configurations."
 echo
 sleep 2
 GPU=$(gum choose --item.foreground 250 "AMD" "NVIDIA")
@@ -117,12 +117,13 @@ rm -rf ~/.local/share/calos/.git
 sudo updatedb
 clear
 cat ~/.local/share/calos/install/logo-complete.txt | tte --xterm-colors --frame-rate 60 middleout
+echo
 rm -rf ~/.local/share/calos/install
 rm ~/.local/share/calos/README.md
 
 # Installation Completion and Optional Steam Install
 
-gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete'), reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "Lastly, if you would like to install Steam, follow the prompts below. Multilib repositories have already been enabled."
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete!') Reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "The default editor is Neovim, which can be launched with $(gum style --italic 'SUPER + N')." "Please open Neovim once to initialize lazyvim scripts, this will only occur on first launch." " " "Lastly, if you would like to install Steam, follow the prompts below. Multilib repositories have already been enabled."
 sleep 8
 echo
 echo
