@@ -9,6 +9,8 @@ CALOS_INSTALL=~/.local/share/calos/install
 sudo pacman -S --noconfirm --needed gum
 
 clear
+cat ~/.local/share/calos/install/logo-complete.txt
+echo
 gum style --border normal --border-foreground 212 --padding="1 3" "Welcome to $(gum style --bold --foreground 212 'calOS')!" " " "This script will turn your base Arch Linux install into a clean, minimal, and functional Hyprland setup." "The installer will install/enable $(gum style --foreground 212 'Chaotic-AUR') as well as $(gum style --italic 'Paru') to function as your AUR helper." "There will be an option towards the end of the install to switch to yay as your AUR helper." " " "Make sure you are running this installation script on a $(gum style --foreground 212 'fresh Arch Linux installation')!"
 echo
 sleep 6
