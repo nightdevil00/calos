@@ -30,6 +30,8 @@ sudo systemctl mask systemd-networkd-wait-online.service
 # Turn on bluetooth by default
 sudo systemctl enable bluetooth.service
 
+# truly misc
+
 xdg-settings set default-web-browser firefox.desktop
 echo
 systemctl --user enable --now hyprpolkitagent.service
@@ -38,3 +40,11 @@ sudo pacman -Rdd greetd-agreety --noconfirm
 sudo systemctl enable greetd.service
 elephant service enable
 systemctl --user enable --now elephant.service
+sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
+sudo cp ~/.local/share/calos/install/motd /etc/motd
+sudo cp ~/.local/share/calos/install/issue /etc/issue
+echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
+sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
+sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
+mkdir -p ~/.local/share/fonts
+fc-cache
