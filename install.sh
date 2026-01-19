@@ -47,8 +47,6 @@ source $CALOS_INSTALL/config/config.sh
 source $CALOS_INSTALL/config/theme.sh
 source $CALOS_INSTALL/config/branding.sh
 calos-tui-install "Dust" "bash -c 'dust -r; read -n 1 -s'" float https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/qdirstat.png
-mkdir -p ~/.local/share/fonts
-fc-cache
 clear
 
 # NVIDIA checks, AMD fixes
@@ -67,7 +65,6 @@ sleep 6
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
 source $CALOS_INSTALL/limine.sh
-sudo cp ~/.local/share/calos/install/bash_profile ~/.bash_profile
 clear
 
 
@@ -77,11 +74,6 @@ gum style --border normal --border-foreground 212 --padding="1 3" "The installer
 sleep 4
 echo
 gum spin -s line --title="Resuming install..." -- sleep 4
-sudo cp ~/.local/share/calos/install/greet-config.toml /etc/greetd/config.toml
-sudo cp ~/.local/share/calos/install/motd /etc/motd
-sudo cp ~/.local/share/calos/install/issue /etc/issue
-echo "$USER ALL=(ALL:ALL) NOPASSWD: /usr/bin/systemctl start bootmsg.service" | sudo tee "/etc/sudoers.d/no-bootmsg-prompt"
-sudo cp ~/.local/share/calos/install/bootmsg.service /etc/systemd/system/bootmsg.service
 source $CALOS_INSTALL/misc.sh
 clear
 
@@ -94,6 +86,13 @@ HELPER=$(gum choose --item.foreground 250 "Paru" "yay")
 [[ "$HELPER" == "yay" ]] && gum spin -s line --title="Paru will now be replaced with yay..." -- sleep 3 && sudo pacman -S --noconfirm --needed yay && sudo pacman -Rns paru --noconfirm || gum spin -s line --title="Paru will remain your AUR helper. Resuming install..." -- sleep 3
 clear
 
+# Steam Installation
+
+gum style --border normal --border-foreground 212 --padding="1 3" "Would you like to install/setup $(gum style --bold --foreground 212 'Steam')?" "Installing Steam from this script will automatically set proper autostart/uwsm configurations." "You may always install Steam manually post-installation."
+sleep 4
+gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam script..." -- sleep 3 && source ./steam.sh || echo "Steam will not be installed."
+sleep 1
+
 # Installation Cleanup
 
 gum style --border normal --border-foreground 212 --padding="1 3" "The installer will now begin removing unnecessary files created during install." "Please keep all remaining files in $(gum style --italic '~/.local/share/calos') for system stability."
@@ -105,12 +104,8 @@ gum spin -s line --title="Finalizing install..." -- sleep 2
 
 # Installation Completion and Optional Steam Install
 
-gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete!') Reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "The default editor is Neovim, which can be launched with $(gum style --italic 'SUPER + N')." "Please open Neovim once to initialize lazyvim scripts, this will only occur on the first launch." " " "Lastly, if you would like to install Steam, follow the prompts below. Multilib repositories have already been enabled." "Installing Steam from this script will automatically set proper autostart/uwsm configurations as well."
-sleep 8
-echo
-echo
-gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam script..." -- sleep 4 && source ./steam.sh || echo "Steam will not be installed."
-echo
+gum style --border normal --border-foreground 212 --padding="1 3" "$(gum style --bold --foreground 212 'Installation complete!') Reboot to access system." " " "Make sure to read through your configuration files to familarize yourself with the OS, especially in $(gum style --italic '~/.config/hypr')." "Please configure your $(gum style --italic '~/.config/hypr/monitors.conf') file in order to set a proper resolution and refresh rate." " " "The default editor is Neovim, which can be launched with $(gum style --italic 'SUPER + N')." "Please open Neovim once to initialize lazyvim scripts, this will only occur on the first launch." " " "For any additional inquiries, please refer to the Github documentation."
+sleep 5
 echo
 rm ~/.local/share/calos/steam.sh
 rm ~/.local/share/calos/install.sh
