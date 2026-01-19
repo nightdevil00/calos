@@ -90,6 +90,7 @@ clear
 
 gum style --border normal --border-foreground 212 --padding="1 3" "Would you like to install/setup $(gum style --bold --foreground 212 'Steam')?" "Installing Steam from this script will automatically set proper autostart/uwsm configurations." "You may always install Steam manually post-installation."
 sleep 4
+echo
 gum confirm "Install Steam?" && gum spin -s line --title="Initializing Steam script..." -- sleep 3 && source ./steam.sh || echo "Steam will not be installed."
 sleep 1
 
