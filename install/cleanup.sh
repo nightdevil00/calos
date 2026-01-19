@@ -1,5 +1,6 @@
 chmod +x ~/.local/share/calos/bin/calos-pkg-list
 chmod +x ~/.local/share/calos/bin/calos-list-keybindings
+chmod +x ~/.local/share/calos/bin/calos-toggle-gamemode
 rm ~/.local/share/calos/bin/calos-tui-install
 cp ~/.local/share/calos/applications/hidden/* ~/.local/share/applications/
 cp ~/.local/share/calos/applications/nvim.desktop ~/.local/share/applications/
