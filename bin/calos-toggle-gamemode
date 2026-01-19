@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [[ $(hyprctl submap) == gaming ]]; then
+  hyprctl dispatch submap
+  notify-send 'SUPER Key Functionality Enabled' 'All functionality has been restored to default settings.'
+else
+  hyprctl dispatch submap gaming
+  notify-send 'SUPER Key Functionality Disabled' 'To revert to standard keybindings, use SUPER + CTRL + G.\nKeybind for closing applications is now SUPER + ESC.'
+fi
