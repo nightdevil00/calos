@@ -30,6 +30,7 @@
 	"modules-right": [
 		"mpris",
     "pulseaudio",
+    "hyprland/submap",
     "custom/screenrecording-indicator",
     "network",
 		"bluetooth",
@@ -264,6 +265,7 @@
 		"rewrite": {
 			"^$": "Desktop",
 			// "^Alacritty$": "btop++",
+      "com.github.PintaProject.Pinta": "Pinta Image Editor",
 			"cava": "CAVA Audio Visualizer",
 			"firefox": "Mozilla Firefox",
 			"btop": "BTOP++ System Information",
@@ -324,7 +326,15 @@
 		"cursor": true
 	},
 
- 
+"hyprland/submap": {
+	"format": "󰊴",
+  "min-length": 4,
+	"max-length": 4,
+  "justify": "center",
+  "on-click": "hyprctl dispatch submap",
+  "tooltip": true,
+	"tooltip-format": "SUPER + CTRL + G to disable"
+},
 
 	"group/theme_switcher": {
 		"orientation": "horizontal",
